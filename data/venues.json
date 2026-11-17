@@ -80,9 +80,14 @@
         "christmas": "https://www.smithsbarandgrill.co.uk/christmas-day",
         "menu": "https://www.smithsbarandgrill.co.uk/assets/website/events/christmas-day-menu.pdf",
         "booking": "https://www.smithsbarandgrill.co.uk/visit",
-        "directions": "https://www.google.com/maps/search/?api=1&query=Smith%27s+Bar+%26+Grill+25+Sheldon+Square+London+W2+6EY"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Smith%27s+Bar+%26+Grill+25+Sheldon+Square+London+W2+6EY",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "020 7286 9458", "email": "reservations@smithsbarandgrill.co.uk" },
+      "contact": {
+        "phone": "020 7286 9458",
+        "email": "reservations@smithsbarandgrill.co.uk"
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official page (\"Updated October 2026\") states the restaurant is open on Friday 25 December 2026 with a three-course Christmas Day Menu."
@@ -97,7 +102,10 @@
       "meals": {
         "lunch": true,
         "dinner": true,
-        "sittings": ["First booking 12pm", "Last booking 9.30pm"],
+        "sittings": [
+          "First booking 12pm",
+          "Last booking 9.30pm"
+        ],
         "note": "The venue says the 12pm–9.30pm booking window covers both Christmas lunch and Christmas dinner."
       },
       "pricing": {
@@ -107,11 +115,22 @@
         "childAgeBand": null,
         "childNote": "Children's Christmas Day menu at £30; age limit not published.",
         "otherPrices": [],
-        "includes": ["Three courses", "A glass of Champagne (adults)"],
+        "includes": [
+          "Three courses",
+          "A glass of Champagne (adults)"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "extra", "rate": 12.5, "note": "Prices include VAT; a discretionary 12.5% service charge is added to the bill." }
+        "serviceCharge": {
+          "status": "extra",
+          "rate": 12.5,
+          "note": "Prices include VAT; a discretionary 12.5% service charge is added to the bill."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Standalone restaurant (not a hotel); public bookings." },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Standalone restaurant (not a hotel); public bookings."
+      },
       "terms": {
         "deposit": "\"We may ask for card details to secure your table.\" No deposit amount published.",
         "paymentDeadline": null,
@@ -133,12 +152,25 @@
         {
           "url": "https://www.smithsbarandgrill.co.uk/christmas-day",
           "title": "Christmas Day Lunch & Dinner 2026 in Paddington — Smith's Bar & Grill (official)",
-          "supports": ["Open 25 Dec 2026", "£99 adult incl. Champagne", "£30 children's menu", "12pm–9.30pm booking window", "12.5% discretionary service", "Card details may be requested", "Step-free access", "Menu", "Contact details"],
+          "supports": [
+            "Open 25 Dec 2026",
+            "£99 adult incl. Champagne",
+            "£30 children's menu",
+            "12pm–9.30pm booking window",
+            "12.5% discretionary service",
+            "Card details may be requested",
+            "Step-free access",
+            "Menu",
+            "Contact details"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Child age band not stated.", "Transport on the day: no trains (official National Rail notice) — car/taxi only."]
+      "caveats": [
+        "Child age band not stated.",
+        "Transport on the day: no trains (official National Rail notice) — car/taxi only."
+      ]
     },
     {
       "id": "royal-lancaster-christmas-brunch",
@@ -152,9 +184,22 @@
         "christmas": "https://www.royallancaster.com/promotions/christmas-day-bottomless-brunch/",
         "menu": "https://www.royallancaster.com/wp-content/uploads/2026/09/Christmas-Brunch-Menu-2025-1.pdf",
         "booking": "https://www.opentable.co.uk/booking/experiences-availability?rid=286245&restref=286245&experienceId=793032",
-        "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Lancaster+London+Lancaster+Terrace+W2+2TY"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Lancaster+London+Lancaster+Terrace+W2+2TY",
+        "checkTables": {
+          "template": "https://www.opentable.co.uk/booking/experiences-availability?rid=286245&restref=286245&experienceId=793032&covers={covers}&dateTime=2026-12-25T13:00:00",
+          "prefills": [
+            "date",
+            "time",
+            "covers"
+          ],
+          "note": "Opens OpenTable with 25 Dec 2026, the 1.00pm sitting and your party size filled in (the hotel's own link uses these settings). Choose 2.30pm on OpenTable if preferred."
+        },
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "+44 20 7551 6000", "email": "info@royallancaster.com" },
+      "contact": {
+        "phone": "+44 20 7551 6000",
+        "email": "info@royallancaster.com"
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official hotel page: \"Join us on 25 December 2026, and celebrate Christmas Day with our Bottomless Brunch at the Park Restaurant\", with sittings at 1.00pm and 2.30pm."
@@ -169,7 +214,10 @@
       "meals": {
         "lunch": true,
         "dinner": false,
-        "sittings": ["1.00pm", "2.30pm"],
+        "sittings": [
+          "1.00pm",
+          "2.30pm"
+        ],
         "note": "Daytime brunch only; no evening sitting listed for this offer."
       },
       "pricing": {
@@ -179,12 +227,30 @@
         "childAgeBand": "Under 12",
         "childNote": "£125 for children under 12 (non-alcoholic option).",
         "otherPrices": [],
-        "includes": ["Glass of Champagne on arrival", "Festive brunch spread and carved mains", "Festive desserts", "Free-flowing Champagne and wine (adults)"],
+        "includes": [
+          "Glass of Champagne on arrival",
+          "Festive brunch spread and carved mains",
+          "Festive desserts",
+          "Free-flowing Champagne and wine (adults)"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated on the Christmas brunch page." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated on the Christmas brunch page."
+        },
+        "childMaxAge": 11
       },
-      "nonresident": { "status": "welcome", "note": "Sold as a public restaurant experience via OpenTable from the hotel's page; no overnight stay requirement stated." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Sold as a public restaurant experience via OpenTable from the hotel's page; no overnight stay requirement stated."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
       "dietary": null,
       "accessibility": null,
       "summary": {
@@ -200,18 +266,30 @@
         {
           "url": "https://www.royallancaster.com/promotions/christmas-day-bottomless-brunch/",
           "title": "Christmas Day Bottomless Brunch — Royal Lancaster London (official)",
-          "supports": ["25 Dec 2026 date", "Sittings 1.00pm & 2.30pm", "£325 adult / £125 child under 12", "Inclusions", "OpenTable booking link"],
+          "supports": [
+            "25 Dec 2026 date",
+            "Sittings 1.00pm & 2.30pm",
+            "£325 adult / £125 child under 12",
+            "Inclusions",
+            "OpenTable booking link"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://www.royallancaster.com/christmas/",
           "title": "Christmas at Royal Lancaster London (official)",
-          "supports": ["Address and phone", "Christmas Day brunch at Park Restaurant advertised"],
+          "supports": [
+            "Address and phone",
+            "Christmas Day brunch at Park Restaurant advertised"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["The linked menu PDF file is named \"2025\"; the 2026 page says the format follows previous years. Ask for the 2026 menu.", "Walking time from Paddington station not verified — use the directions link."]
+      "caveats": [
+        "The linked menu PDF file is named \"2025\"; the 2026 page says the format follows previous years. Ask for the 2026 menu.",
+        "Walking time from Paddington station not verified — use the directions link."
+      ]
     },
     {
       "id": "royal-lancaster-festive-afternoon-tea",
@@ -225,9 +303,22 @@
         "christmas": "https://www.royallancaster.com/bars/afternoon-tea/",
         "menu": "https://www.royallancaster.com/wp-content/uploads/2026/11/NHM-AT-Menu-FESTIVE-2026-web.pdf",
         "booking": "https://www.opentable.co.uk/r/afternoon-tea-at-royal-lancaster-london-reservations-london?restref=286239&lang=en-GB",
-        "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Lancaster+London+Lancaster+Terrace+W2+2TY"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Lancaster+London+Lancaster+Terrace+W2+2TY",
+        "checkTables": {
+          "template": "https://www.opentable.co.uk/r/afternoon-tea-at-royal-lancaster-london-reservations-london?restref=286239&lang=en-GB&covers={covers}&dateTime=2026-12-25T14:00",
+          "prefills": [
+            "date",
+            "time",
+            "covers"
+          ],
+          "note": "Opens OpenTable for 25 Dec 2026 with your party size. The 2pm time is a placeholder because Christmas Day tea times are not published. OpenTable may ignore pre-filled values; check the date and party size before searching."
+        },
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "+44 20 7551 6000", "email": "info@royallancaster.com" },
+      "contact": {
+        "phone": "+44 20 7551 6000",
+        "email": "info@royallancaster.com"
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official afternoon tea page: festive afternoon tea \"served daily from 21st November to 3rd January\" with a specific \"£95 on Christmas Day including a glass of Champagne\" price."
@@ -252,12 +343,28 @@
         "childAgeBand": "12 and under",
         "childNote": "A children's afternoon tea is listed at £30 (12 and under) \"Monday – Sunday\", but the page does not explicitly confirm the children's price for Christmas Day.",
         "otherPrices": [],
-        "includes": ["Festive afternoon tea", "A glass of Champagne (Christmas Day)"],
+        "includes": [
+          "Festive afternoon tea",
+          "A glass of Champagne (Christmas Day)"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": 12
       },
-      "nonresident": { "status": "welcome", "note": "Publicly bookable afternoon tea via OpenTable; no stay requirement stated." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Publicly bookable afternoon tea via OpenTable; no stay requirement stated."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
       "dietary": null,
       "accessibility": null,
       "summary": {
@@ -273,12 +380,21 @@
         {
           "url": "https://www.royallancaster.com/bars/afternoon-tea/",
           "title": "Afternoon Tea — Royal Lancaster London (official)",
-          "supports": ["Served 21 Nov–3 Jan", "£95 on Christmas Day incl. Champagne", "Children's afternoon tea £30 (12 and under)", "OpenTable link", "2026 festive menu PDF"],
+          "supports": [
+            "Served 21 Nov–3 Jan",
+            "£95 on Christmas Day incl. Champagne",
+            "Children's afternoon tea £30 (12 and under)",
+            "OpenTable link",
+            "2026 festive menu PDF"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["The page does not explicitly say \"2026\" next to the Christmas Day price, but it links a festive menu uploaded in November 2026 and the season runs to 3 January.", "Serving times on 25 December not published."]
+      "caveats": [
+        "The page does not explicitly say \"2026\" next to the Christmas Day price, but it links a festive menu uploaded in November 2026 and the season runs to 3 January.",
+        "Serving times on 25 December not published."
+      ]
     },
     {
       "id": "sir-christopher-wren-windsor",
@@ -292,9 +408,14 @@
         "christmas": "https://sirchristopherwren.co.uk/meetings-events/festive-celebrations/",
         "menu": "https://www.menumodo.com/app.php/viewer/outlet/11446/54340/only?lang=en&tags=b",
         "booking": "https://sirchristopherwren.co.uk/sarovamodal/festive-contact-form/",
-        "directions": "https://www.google.com/maps/search/?api=1&query=Sir+Christopher+Wren+Hotel+Thames+Street+Windsor+SL4+1PX"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Sir+Christopher+Wren+Hotel+Thames+Street+Windsor+SL4+1PX",
+        "checkTables": null,
+        "bookingIsEnquiryForm": true
       },
-      "contact": { "phone": "01753 442400", "email": null },
+      "contact": {
+        "phone": "01753 442400",
+        "email": null
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official \"Festive Season 2026\" page lists \"25th December — Christmas Day Lunch\" with adult and child prices."
@@ -306,7 +427,12 @@
         "checkedAt": null,
         "note": "\"Bookings essential\"; the page offers a festive reservation/enquiry form. Availability not checked."
       },
-      "meals": { "lunch": true, "dinner": null, "sittings": [], "note": "Christmas Day Lunch advertised; sitting times not published. No Christmas Day evening offer found." },
+      "meals": {
+        "lunch": true,
+        "dinner": null,
+        "sittings": [],
+        "note": "Christmas Day Lunch advertised; sitting times not published. No Christmas Day evening offer found."
+      },
       "pricing": {
         "adult": 159,
         "adultNote": "Champagne greeting and five-course meal",
@@ -314,12 +440,30 @@
         "childAgeBand": "Under 12",
         "childNote": "£77.50 for children under 12.",
         "otherPrices": [],
-        "includes": ["Champagne on arrival", "Five courses", "Christmas novelties", "A gift from Santa for every child"],
+        "includes": [
+          "Champagne on arrival",
+          "Five courses",
+          "Christmas novelties",
+          "A gift from Santa for every child"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": 11
       },
-      "nonresident": { "status": "unknown", "note": "Sold as a standalone lunch with per-person prices and no stay requirement mentioned, but the page does not state explicitly that non-residents may book. Ask." },
-      "terms": { "deposit": "Non-refundable deposit of £20 per person required to confirm.", "paymentDeadline": null, "preorder": null, "cancellation": "Deposit is non-refundable; other cancellation terms not published." },
+      "nonresident": {
+        "status": "unknown",
+        "note": "Sold as a standalone lunch with per-person prices and no stay requirement mentioned, but the page does not state explicitly that non-residents may book. Ask."
+      },
+      "terms": {
+        "deposit": "Non-refundable deposit of £20 per person required to confirm.",
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": "Deposit is non-refundable; other cancellation terms not published."
+      },
       "dietary": null,
       "accessibility": null,
       "summary": {
@@ -335,12 +479,22 @@
         {
           "url": "https://sirchristopherwren.co.uk/meetings-events/festive-celebrations/",
           "title": "Festive Celebrations — Sir Christopher Wren Hotel (official)",
-          "supports": ["Festive Season 2026", "25 Dec Christmas Day Lunch", "£159 adult / £77.50 under 12", "Inclusions", "£20pp non-refundable deposit", "Address and phone"],
+          "supports": [
+            "Festive Season 2026",
+            "25 Dec Christmas Day Lunch",
+            "£159 adult / £77.50 under 12",
+            "Inclusions",
+            "£20pp non-refundable deposit",
+            "Address and phone"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Sitting times and service charge not published.", "Non-resident booking not explicitly stated."]
+      "caveats": [
+        "Sitting times and service charge not published.",
+        "Non-resident booking not explicitly stated."
+      ]
     },
     {
       "id": "carpenters-arms-windsor",
@@ -354,28 +508,65 @@
         "christmas": "https://www.nicholsonspubs.co.uk/restaurants/southeast/thecarpentersarmswindsor/menus/christmas-day-menu",
         "menu": "https://www.nicholsonspubs.co.uk/content/dam/nicholsons/pdf/christmas/nichs-christmas-day-menu-2026-pb3.pdf",
         "booking": "https://www.nicholsonspubs.co.uk/restaurants/southeast/thecarpentersarmswindsor/bookings",
-        "directions": "https://www.google.com/maps/search/?api=1&query=The+Carpenter%27s+Arms+4+Market+Street+Windsor+SL4+1PB"
+        "directions": "https://www.google.com/maps/search/?api=1&query=The+Carpenter%27s+Arms+4+Market+Street+Windsor+SL4+1PB",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": null, "email": null },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "The pub's own \"Christmas Dinner 2026\" Christmas Day menu page links a 2026 Christmas Day menu PDF (\"Christmas Day Menu for 94.00\")."
       },
-      "availability": { "status": "booking-route-open", "partySize": null, "sitting": null, "checkedAt": null, "note": "Online booking page linked. Availability not checked." },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": "Chain wording mentions \"Christmas Day lunch or Christmas Day dinner\" but no times are published. Ask what time slots are offered." },
+      "availability": {
+        "status": "booking-route-open",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Online booking page linked. Availability not checked."
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": "Chain wording mentions \"Christmas Day lunch or Christmas Day dinner\" but no times are published. Ask what time slots are offered."
+      },
       "pricing": {
         "adult": 94,
         "adultNote": "Three courses plus coffee and a mini mince pie",
         "child": null,
         "childAgeBand": null,
         "childNote": "No children's Christmas Day price found.",
-        "otherPrices": [{ "label": "Optional welcome glass of Prosecco", "amount": 6.5 }],
-        "includes": ["Three courses", "Coffee and a mini mince pie"],
+        "otherPrices": [
+          {
+            "label": "Optional welcome glass of Prosecco",
+            "amount": 6.5
+          }
+        ],
+        "includes": [
+          "Three courses",
+          "Coffee and a mini mince pie"
+        ],
         "supplements": "Welcome Prosecco is optional at £6.50 per person.",
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Pub (not a hotel); public bookings." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub (not a hotel); public bookings."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
       "dietary": "Menu marks vegetarian (v) and vegan (ve) dishes, e.g. festive nut roast (ve); vegan alternatives offered for some starters. Full allergen information promised from early November.",
       "accessibility": null,
       "summary": {
@@ -391,18 +582,32 @@
         {
           "url": "https://www.nicholsonspubs.co.uk/restaurants/southeast/thecarpentersarmswindsor/menus/christmas-day-menu",
           "title": "Christmas Day Menu — The Carpenter's Arms, Windsor (official)",
-          "supports": ["Christmas Day lunch/dinner advertised", "Booking page", "Links 2026 menu PDF", "Address (page data)"],
+          "supports": [
+            "Christmas Day lunch/dinner advertised",
+            "Booking page",
+            "Links 2026 menu PDF",
+            "Address (page data)"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://www.nicholsonspubs.co.uk/content/dam/nicholsons/pdf/christmas/nichs-christmas-day-menu-2026-pb3.pdf",
           "title": "Nicholson's Christmas Day Menu 2026 (PDF linked from the pub's page)",
-          "supports": ["£94.00 price", "Prosecco £6.50 optional", "Dishes", "Coffee & mince pie included", "Dietary labels"],
+          "supports": [
+            "£94.00 price",
+            "Prosecco £6.50 optional",
+            "Dishes",
+            "Coffee & mince pie included",
+            "Dietary labels"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["The menu PDF is a chain template (price band \"pb3\") linked from this pub's page; confirm the price with the pub.", "No phone number captured from the official page."]
+      "caveats": [
+        "The menu PDF is a chain template (price band \"pb3\") linked from this pub's page; confirm the price with the pub.",
+        "No phone number captured from the official page."
+      ]
     },
     {
       "id": "windsor-lad-harvester",
@@ -416,15 +621,31 @@
         "christmas": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/menus/christmas-day-menu",
         "menu": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/menus/christmas-day-menu",
         "booking": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/tablebooking",
-        "directions": "https://www.google.com/maps/search/?api=1&query=The+Windsor+Lad+250+Maidenhead+Road+Windsor+SL4+5HQ"
+        "directions": "https://www.google.com/maps/search/?api=1&query=The+Windsor+Lad+250+Maidenhead+Road+Windsor+SL4+5HQ",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": null, "email": null },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official page titled \"Christmas Day Menu 2026 at The Windsor Lad, Windsor\", plus a Christmas deposit policy with specific Christmas Day terms."
       },
-      "availability": { "status": "booking-route-open", "partySize": null, "sitting": null, "checkedAt": null, "note": "Table booking page linked. Availability not checked." },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": "No times published." },
+      "availability": {
+        "status": "booking-route-open",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Table booking page linked. Availability not checked."
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": "No times published."
+      },
       "pricing": {
         "adult": null,
         "adultNote": "Price not readable — the menu loads dynamically and could not be captured.",
@@ -434,9 +655,17 @@
         "otherPrices": [],
         "includes": [],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Pub restaurant (not a hotel); public bookings." },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub restaurant (not a hotel); public bookings."
+      },
       "terms": {
         "deposit": "£10 per person deposit for Christmas Day, whatever the party size.",
         "paymentDeadline": "Full payment and pre-order required by 1 December.",
@@ -449,23 +678,38 @@
         "menu": "Christmas Day set menu (dishes and price not captured — check the menu page).",
         "atmosphere": "Family-oriented chain pub-restaurant on the western edge of Windsor."
       },
-      "recommendation": { "score": 50, "pick": false, "rationale": "Confirmed and likely casual, but price and times are unknown and the 1 December payment/pre-order deadline is close." },
+      "recommendation": {
+        "score": 50,
+        "pick": false,
+        "rationale": "Confirmed and likely casual, but price and times are unknown and the 1 December payment/pre-order deadline is close."
+      },
       "sources": [
         {
           "url": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/menus/christmas-day-menu",
           "title": "Christmas Day Menu 2026 — The Windsor Lad (official)",
-          "supports": ["Christmas Day 2026 menu advertised", "Booking link", "Address (page data)"],
+          "supports": [
+            "Christmas Day 2026 menu advertised",
+            "Booking link",
+            "Address (page data)"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/christmasdeposits",
           "title": "Christmas Deposit Policy — The Windsor Lad (official)",
-          "supports": ["£10pp Christmas Day deposit", "Full payment & pre-order by 1 Dec", "Cancellation terms"],
+          "supports": [
+            "£10pp Christmas Day deposit",
+            "Full payment & pre-order by 1 Dec",
+            "Cancellation terms"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Price not captured.", "The deposit page says \"1st December\" without a year; it is the current Christmas policy page."]
+      "caveats": [
+        "Price not captured.",
+        "The deposit page says \"1st December\" without a year; it is the current Christmas policy page."
+      ]
     },
     {
       "id": "greene-oak-oakley-green",
@@ -479,9 +723,14 @@
         "christmas": "https://thegreeneoak.co.uk/christmas",
         "menu": "https://thegreeneoak.co.uk/menus/tgo-xmas-day-menu-26.pdf",
         "booking": null,
-        "directions": "https://www.google.com/maps/search/?api=1&query=The+Greene+Oak+Oakley+Green+Windsor+SL4+5UW"
+        "directions": "https://www.google.com/maps/search/?api=1&query=The+Greene+Oak+Oakley+Green+Windsor+SL4+5UW",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "01753 864294", "email": "info@thegreeneoak.co.uk" },
+      "contact": {
+        "phone": "01753 864294",
+        "email": "info@thegreeneoak.co.uk"
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official Christmas page and \"CHRISTMAS DAY 2026\" menu PDF; Christmas Day hours listed for Friday 25 December."
@@ -496,7 +745,9 @@
       "meals": {
         "lunch": true,
         "dinner": false,
-        "sittings": ["Open 12pm–3pm"],
+        "sittings": [
+          "Open 12pm–3pm"
+        ],
         "note": "Christmas Day: \"Walk in for drinks. Open from 12pm - 3pm. Christmas Lunch for prebooked tables only.\" Food is pre-booked lunch only; walk-ins are drinks only."
       },
       "pricing": {
@@ -506,35 +757,68 @@
         "childAgeBand": "Under 12",
         "childNote": "Children under 12 dine for £55.",
         "otherPrices": [],
-        "includes": ["\"For the table\" snacks", "Starter, main and pudding", "Roast potatoes, sprouts, cauliflower cheese and parsnips for the table"],
+        "includes": [
+          "\"For the table\" snacks",
+          "Starter, main and pudding",
+          "Roast potatoes, sprouts, cauliflower cheese and parsnips for the table"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": 11
       },
-      "nonresident": { "status": "welcome", "note": "Pub (not a hotel)." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": "Pre-orders required by 2 November 2026 (already passed at research time).", "cancellation": null },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub (not a hotel)."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": "Pre-orders required by 2 November 2026 (already passed at research time).",
+        "cancellation": null
+      },
       "dietary": "Menu marks vegetarian (v), plant-based (pb) and gluten-free (gf) options, e.g. cauliflower steak (pb), mushroom & chestnut pie (v).",
       "accessibility": null,
       "summary": {
         "menu": "Snacks for the table, then soup, beets, venison carpaccio or cured trout; turkey, duck, monkfish or plant-based mains; classic puddings or cheese.",
         "atmosphere": "Country gastropub in a rural setting between Windsor and Maidenhead."
       },
-      "recommendation": { "score": 40, "pick": false, "rationale": "Strong menu and clear prices, but rural (taxi needed) and its pre-order deadline has already passed." },
+      "recommendation": {
+        "score": 40,
+        "pick": false,
+        "rationale": "Strong menu and clear prices, but rural (taxi needed) and its pre-order deadline has already passed."
+      },
       "sources": [
         {
           "url": "https://thegreeneoak.co.uk/christmas",
           "title": "Christmas at The Greene Oak (official)",
-          "supports": ["£110 / £55 under 12", "Book via email", "Christmas Day hours 12pm–3pm, lunch prebooked only, walk-in drinks", "Address and contacts"],
+          "supports": [
+            "£110 / £55 under 12",
+            "Book via email",
+            "Christmas Day hours 12pm–3pm, lunch prebooked only, walk-in drinks",
+            "Address and contacts"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://thegreeneoak.co.uk/menus/tgo-xmas-day-menu-26.pdf",
           "title": "Christmas Day 2026 menu (official PDF)",
-          "supports": ["Menu", "Pre-orders by 2 Nov 2026", "Dietary labels"],
+          "supports": [
+            "Menu",
+            "Pre-orders by 2 Nov 2026",
+            "Dietary labels"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Pre-order deadline (2 Nov 2026) passed before research date.", "Rural location: not reachable on foot from central Windsor in practice; check the route."]
+      "caveats": [
+        "Pre-order deadline (2 Nov 2026) passed before research date.",
+        "Rural location: not reachable on foot from central Windsor in practice; check the route."
+      ]
     },
     {
       "id": "fairmont-windsor-park",
@@ -548,15 +832,31 @@
         "christmas": "https://www.fairmont-windsorpark.com/special-offers/christmas-night-stay-offer/",
         "menu": null,
         "booking": null,
-        "directions": "https://www.google.com/maps/search/?api=1&query=Fairmont+Windsor+Park+Englefield+Green"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Fairmont+Windsor+Park+Englefield+Green",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "+44 1784 535555", "email": "reservations.windsorpark@fairmont.com" },
+      "contact": {
+        "phone": "+44 1784 535555",
+        "email": "reservations.windsorpark@fairmont.com"
+      },
       "christmasDay": {
         "status": "confirmed",
         "evidence": "Official 2026 Christmas stay-offer page states: \"Christmas Day Lunch in Windsor Brasserie and Christmas Day Lunch in Il Giardino are not included in any stay and must be booked and paid for separately.\""
       },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": "No Christmas Day booking page found." },
-      "meals": { "lunch": true, "dinner": null, "sittings": [], "note": "Christmas Day lunch in two restaurants. No times found." },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "No Christmas Day booking page found."
+      },
+      "meals": {
+        "lunch": true,
+        "dinner": null,
+        "sittings": [],
+        "note": "Christmas Day lunch in two restaurants. No times found."
+      },
       "pricing": {
         "adult": null,
         "adultNote": "Price not published on pages read.",
@@ -566,27 +866,51 @@
         "otherPrices": [],
         "includes": [],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": null }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "unknown", "note": "The page says non-staying visitors can book Boxing Day brunch as non-residents, but does not say this explicitly for Christmas Day lunch. Ask." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
+      "nonresident": {
+        "status": "unknown",
+        "note": "The page says non-staying visitors can book Boxing Day brunch as non-residents, but does not say this explicitly for Christmas Day lunch. Ask."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
       "dietary": null,
       "accessibility": null,
       "summary": {
         "menu": "Christmas Day lunch in the Windsor Brasserie or Il Giardino (Italian) — menus not found.",
         "atmosphere": "Large five-star country hotel on the edge of Windsor Great Park."
       },
-      "recommendation": { "score": 35, "pick": false, "rationale": "Christmas Day lunch is confirmed, but price, menu and non-resident access are all unknown, and it is outside Windsor town (taxi needed)." },
+      "recommendation": {
+        "score": 35,
+        "pick": false,
+        "rationale": "Christmas Day lunch is confirmed, but price, menu and non-resident access are all unknown, and it is outside Windsor town (taxi needed)."
+      },
       "sources": [
         {
           "url": "https://www.fairmont-windsorpark.com/special-offers/christmas-night-stay-offer/",
           "title": "Christmas Night Stay Offer — Fairmont Windsor Park (official)",
-          "supports": ["Christmas Day Lunch in Windsor Brasserie and Il Giardino exists, booked separately", "Non-resident note for Boxing Day brunch", "Phone and email"],
+          "supports": [
+            "Christmas Day Lunch in Windsor Brasserie and Il Giardino exists, booked separately",
+            "Non-resident note for Boxing Day brunch",
+            "Phone and email"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Located in Surrey, outside Windsor town — included for its Windsor Great Park location.", "Price and menu unknown."]
+      "caveats": [
+        "Located in Surrey, outside Windsor town — included for its Windsor Great Park location.",
+        "Price and menu unknown."
+      ]
     },
     {
       "id": "braywood-paley-street",
@@ -600,42 +924,99 @@
         "christmas": "https://www.thebraywood.co.uk/christmas/",
         "menu": "https://www.thebraywood.co.uk/christmas/",
         "booking": null,
-        "directions": "https://www.google.com/maps/search/?api=1&query=The+Braywood+Paley+Street+Maidenhead+SL6+3JN"
+        "directions": "https://www.google.com/maps/search/?api=1&query=The+Braywood+Paley+Street+Maidenhead+SL6+3JN",
+        "checkTables": {
+          "template": "https://booking.resdiary.com/widget/Standard/TheBraywood/53290?date=2026-12-25",
+          "prefills": [
+            "date"
+          ],
+          "note": "Opens the restaurant's ResDiary booking widget on 25 Dec 2026 (the venue's own link uses this date setting). Select your party size in the widget."
+        },
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "01628 361873", "email": "hello@thebraywood.co.uk" },
-      "christmasDay": { "status": "confirmed", "evidence": "Official page: \"Our 2026 Christmas Day Menu\" — 5 courses, £180, lunch only." },
-      "availability": { "status": "booking-route-open", "partySize": null, "sitting": null, "checkedAt": null, "note": "Page invites reservations (and phone for groups). Availability not checked. The online widget link on the page shows an outdated default date, so phone is safer." },
-      "meals": { "lunch": true, "dinner": false, "sittings": [], "note": "\"Lunch only.\" Sitting times not published." },
+      "contact": {
+        "phone": "01628 361873",
+        "email": "hello@thebraywood.co.uk"
+      },
+      "christmasDay": {
+        "status": "confirmed",
+        "evidence": "Official page: \"Our 2026 Christmas Day Menu\" — 5 courses, £180, lunch only."
+      },
+      "availability": {
+        "status": "booking-route-open",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Page invites reservations (and phone for groups). Availability not checked. The online widget link on the page shows an outdated default date, so phone is safer."
+      },
+      "meals": {
+        "lunch": true,
+        "dinner": false,
+        "sittings": [],
+        "note": "\"Lunch only.\" Sitting times not published."
+      },
       "pricing": {
         "adult": 180,
         "adultNote": "Five courses (standard menu)",
         "child": null,
         "childAgeBand": null,
         "childNote": "No children's price published.",
-        "otherPrices": [{ "label": "Vegetarian Christmas Day menu (5 courses)", "amount": 160 }],
-        "includes": ["Five courses"],
+        "otherPrices": [
+          {
+            "label": "Vegetarian Christmas Day menu (5 courses)",
+            "amount": 160
+          }
+        ],
+        "includes": [
+          "Five courses"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "extra", "rate": 12.5, "note": "A discretionary service charge of 12.5% will be added to your final bill." }
+        "serviceCharge": {
+          "status": "extra",
+          "rate": 12.5,
+          "note": "A discretionary service charge of 12.5% will be added to your final bill."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Standalone restaurant." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Standalone restaurant."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
       "dietary": "Separate vegetarian Christmas Day menu (£160). Venue warns fish may contain small bones and game may contain shot.",
       "accessibility": null,
       "summary": {
         "menu": "Lobster & prawn cocktail, halibut with Exmoor caviar, roast turkey or cod, Christmas pudding, \"Ferrero Rocher\" dessert.",
         "atmosphere": "Upmarket countryside restaurant with an extensive wine list (600+ wines)."
       },
-      "recommendation": { "score": 55, "pick": false, "rationale": "Fine-dining option with a confirmed 2026 menu and a dedicated vegetarian menu; expensive, rural and taxi-dependent." },
+      "recommendation": {
+        "score": 55,
+        "pick": false,
+        "rationale": "Fine-dining option with a confirmed 2026 menu and a dedicated vegetarian menu; expensive, rural and taxi-dependent."
+      },
       "sources": [
         {
           "url": "https://www.thebraywood.co.uk/christmas/",
           "title": "Festive & Christmas Menus 2026 — The Braywood (official)",
-          "supports": ["2026 Christmas Day menu", "£180 / vegetarian £160", "Lunch only", "12.5% discretionary service", "Address, phone, email"],
+          "supports": [
+            "2026 Christmas Day menu",
+            "£180 / vegetarian £160",
+            "Lunch only",
+            "12.5% discretionary service",
+            "Address, phone, email"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Rural location southwest of Maidenhead."]
+      "caveats": [
+        "Rural location southwest of Maidenhead."
+      ]
     },
     {
       "id": "thatched-cottage-maidenhead",
@@ -649,12 +1030,31 @@
         "christmas": "https://www.greeneking.co.uk/pubs/berkshire/thatched-cottage/christmas/christmas-day",
         "menu": "https://www.greeneking.co.uk/pubs/berkshire/thatched-cottage/christmas/christmas-day",
         "booking": null,
-        "directions": "https://www.google.com/maps/search/?api=1&query=Thatched+Cottage+Cannon+Lane+Maidenhead+SL6+3PE"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Thatched+Cottage+Cannon+Lane+Maidenhead+SL6+3PE",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "01628 822347", "email": null },
-      "christmasDay": { "status": "confirmed", "evidence": "Official page \"Christmas Day 2026 at the Thatched Cottage, Maidenhead\" with booking terms for 25 December 2026." },
-      "availability": { "status": "booking-route-open", "partySize": null, "sitting": null, "checkedAt": null, "note": "Online deposit booking described; no further bookings after 18 Dec 2026 except by phone. Availability not checked." },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": "Times not published." },
+      "contact": {
+        "phone": "01628 822347",
+        "email": null
+      },
+      "christmasDay": {
+        "status": "confirmed",
+        "evidence": "Official page \"Christmas Day 2026 at the Thatched Cottage, Maidenhead\" with booking terms for 25 December 2026."
+      },
+      "availability": {
+        "status": "booking-route-open",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Online deposit booking described; no further bookings after 18 Dec 2026 except by phone. Availability not checked."
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": "Times not published."
+      },
       "pricing": {
         "adult": 62.95,
         "adultNote": "Three courses",
@@ -662,11 +1062,22 @@
         "childAgeBand": null,
         "childNote": "A kids' Christmas Day menu exists but its price was not shown.",
         "otherPrices": [],
-        "includes": ["Three courses", "Mince pie with tea or coffee is offered as a dessert choice"],
+        "includes": [
+          "Three courses",
+          "Mince pie with tea or coffee is offered as a dessert choice"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "unknown", "rate": null, "note": "Not stated." }
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": "Not stated."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Pub (not a hotel)." },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub (not a hotel)."
+      },
       "terms": {
         "deposit": "£10 per person (adults and children) secures the booking; online deposit at booking, or within 72 hours for phone bookings.",
         "paymentDeadline": "Terms say full payment by 1 December 2026; a separate clause says menu choices and final payment by 11 December 2026 (or 18 December for later bookings). Ask which applies.",
@@ -679,17 +1090,30 @@
         "menu": "Smoked salmon, cheddar soufflé, soup or pâté; turkey dinner, salmon Wellington, cheese & leek pie, surf & turf or nut roast; classic desserts.",
         "atmosphere": "Casual chain pub with a family-friendly kids' menu."
       },
-      "recommendation": { "score": 60, "pick": false, "rationale": "Lowest confirmed adult price (£62.95) with detailed booking terms; casual pub style; in Maidenhead, so transport from Windsor is needed." },
+      "recommendation": {
+        "score": 60,
+        "pick": false,
+        "rationale": "Lowest confirmed adult price (£62.95) with detailed booking terms; casual pub style; in Maidenhead, so transport from Windsor is needed."
+      },
       "sources": [
         {
           "url": "https://www.greeneking.co.uk/pubs/berkshire/thatched-cottage/christmas/christmas-day",
           "title": "Christmas Day Menu 2026 — The Thatched Cottage, Maidenhead (official)",
-          "supports": ["25 Dec 2026", "£62.95 three courses", "Deposit, payment, pre-order, cancellation terms", "Menus", "Address and phone (page data)"],
+          "supports": [
+            "25 Dec 2026",
+            "£62.95 three courses",
+            "Deposit, payment, pre-order, cancellation terms",
+            "Menus",
+            "Address and phone (page data)"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Conflicting final-payment dates in the venue's terms.", "Child price not shown."]
+      "caveats": [
+        "Conflicting final-payment dates in the venue's terms.",
+        "Child price not shown."
+      ]
     },
     {
       "id": "coppa-club-maidenhead",
@@ -703,12 +1127,31 @@
         "christmas": "https://www.coppaclub.co.uk/christmas-maidenhead",
         "menu": "https://coppa.cdn.prismic.io/coppa/dePbBxvMAZI8iVWi_CoppaChristmasDay2026WEB.pdf",
         "booking": "https://www.coppaclub.co.uk/?book=tables&location=maidenhead",
-        "directions": "https://www.google.com/maps/search/?api=1&query=Coppa+Club+Maidenhead+SL6+1RR"
+        "directions": "https://www.google.com/maps/search/?api=1&query=Coppa+Club+Maidenhead+SL6+1RR",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
       },
-      "contact": { "phone": "01628 951108", "email": "maidenhead@coppaclub.co.uk" },
-      "christmasDay": { "status": "confirmed", "evidence": "Official Maidenhead Christmas page offers \"Christmas Day Celebrations — 4 Courses £100\" and links a \"Christmas Day 2026\" menu; Christmas Day Lunch terms published." },
-      "availability": { "status": "booking-route-open", "partySize": null, "sitting": null, "checkedAt": null, "note": "Terms say to book Christmas Day lunch via the website. Availability not checked." },
-      "meals": { "lunch": true, "dinner": null, "sittings": [], "note": "Terms refer to \"Christmas Day Lunch\"; no times or evening service found." },
+      "contact": {
+        "phone": "01628 951108",
+        "email": "maidenhead@coppaclub.co.uk"
+      },
+      "christmasDay": {
+        "status": "confirmed",
+        "evidence": "Official Maidenhead Christmas page offers \"Christmas Day Celebrations — 4 Courses £100\" and links a \"Christmas Day 2026\" menu; Christmas Day Lunch terms published."
+      },
+      "availability": {
+        "status": "booking-route-open",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Terms say to book Christmas Day lunch via the website. Availability not checked."
+      },
+      "meals": {
+        "lunch": true,
+        "dinner": null,
+        "sittings": [],
+        "note": "Terms refer to \"Christmas Day Lunch\"; no times or evening service found."
+      },
       "pricing": {
         "adult": 100,
         "adultNote": "Four courses",
@@ -716,11 +1159,24 @@
         "childAgeBand": null,
         "childNote": "A children's Christmas Day menu exists; price not captured.",
         "otherPrices": [],
-        "includes": ["Seasonal sharing dishes", "Main", "Festive dessert", "Mince pies"],
+        "includes": [
+          "Seasonal sharing dishes",
+          "Main",
+          "Festive dessert",
+          "Mince pies"
+        ],
         "supplements": null,
-        "serviceCharge": { "status": "extra", "rate": 12.5, "note": "A 12.5% service charge will be added to your bill (Christmas Day Lunch terms)." }
+        "serviceCharge": {
+          "status": "extra",
+          "rate": 12.5,
+          "note": "A 12.5% service charge will be added to your bill (Christmas Day Lunch terms)."
+        },
+        "childMaxAge": null
       },
-      "nonresident": { "status": "welcome", "note": "Restaurant open to the public; terms say to book Christmas Day lunch via the website." },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Restaurant open to the public; terms say to book Christmas Day lunch via the website."
+      },
       "terms": {
         "deposit": "£40 per person (including children).",
         "paymentDeadline": "Full payment required 14 days before the booking; non-refundable.",
@@ -733,31 +1189,50 @@
         "menu": "Four-course feast: sharing dishes, mains, festive desserts and mince pies (full menu in PDF).",
         "atmosphere": "Stylish riverside bar-restaurant by Maidenhead Bridge, relaxed and contemporary."
       },
-      "recommendation": { "score": 65, "pick": false, "rationale": "Clear 2026 price and terms, riverside setting, mid-range price; Maidenhead location means arranging transport from Windsor." },
+      "recommendation": {
+        "score": 65,
+        "pick": false,
+        "rationale": "Clear 2026 price and terms, riverside setting, mid-range price; Maidenhead location means arranging transport from Windsor."
+      },
       "sources": [
         {
           "url": "https://www.coppaclub.co.uk/christmas-maidenhead",
           "title": "Christmas at Coppa Club Maidenhead (official)",
-          "supports": ["Christmas Day 4 courses £100", "Children's Christmas Day menu exists", "2026 menu PDF links"],
+          "supports": [
+            "Christmas Day 4 courses £100",
+            "Children's Christmas Day menu exists",
+            "2026 menu PDF links"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://www.coppaclub.co.uk/terms-and-conditions",
           "title": "Coppa Club Terms & Conditions — Christmas Day Lunch (official)",
-          "supports": ["£40pp deposit incl. children", "Pre-order 7 days prior", "Full payment 14 days prior, non-refundable", "12.5% service charge", "Book via website"],
+          "supports": [
+            "£40pp deposit incl. children",
+            "Pre-order 7 days prior",
+            "Full payment 14 days prior, non-refundable",
+            "12.5% service charge",
+            "Book via website"
+          ],
           "checked": "2026-11-17"
         },
         {
           "url": "https://www.coppaclub.co.uk/maidenhead",
           "title": "Coppa Club Maidenhead (official)",
-          "supports": ["Address", "Phone and email"],
+          "supports": [
+            "Address",
+            "Phone and email"
+          ],
           "checked": "2026-11-17"
         }
       ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Group-wide Christmas pages note \"prices and availability may vary by location\"; the £100 price appears on the Maidenhead page.", "Menu PDF could not be opened during research."]
+      "caveats": [
+        "Group-wide Christmas pages note \"prices and availability may vary by location\"; the £100 price appears on the Maidenhead page.",
+        "Menu PDF could not be opened during research."
+      ]
     },
-
     {
       "id": "lead-macdonald-windsor",
       "name": "Macdonald Windsor Hotel (Caley's)",
@@ -765,20 +1240,87 @@
       "area": "windsor-eton",
       "locality": "Central Windsor",
       "address": "Windsor (see hotel website)",
-      "links": { "website": "https://www.macdonaldhotels.co.uk/windsor", "christmas": "https://www.macdonaldhotels.co.uk/windsor/venue/christmas/christmas-day-lunch", "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Macdonald+Windsor+Hotel" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Search-result snippets point to a Christmas Day 2026 lunch page (reported as 13:00–15:30, £125 adult / £65 child 2–11, deposits non-refundable), but the official page blocked automated reading, so none of this was verified." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": "Unverified." },
-      "pricing": { "adult": null, "adultNote": "Unverified — see evidence note.", "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "unknown", "note": null },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unverified.", "atmosphere": "Hotel restaurant in central Windsor." },
-      "recommendation": { "score": 30, "pick": false, "rationale": "Strong lead in central Windsor — open the official page in your browser to confirm." },
-      "sources": [ { "url": "https://www.macdonaldhotels.co.uk/windsor/venue/christmas/christmas-day-lunch", "title": "Christmas Day Lunch in Windsor — Macdonald Hotels (official; not readable during research)", "supports": ["Existence of a Christmas Day lunch page"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.macdonaldhotels.co.uk/windsor",
+        "christmas": "https://www.macdonaldhotels.co.uk/windsor/venue/christmas/christmas-day-lunch",
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Macdonald+Windsor+Hotel",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Search-result snippets point to a Christmas Day 2026 lunch page (reported as 13:00–15:30, £125 adult / £65 child 2–11, deposits non-refundable), but the official page blocked automated reading, so none of this was verified."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": "Unverified."
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": "Unverified — see evidence note.",
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "unknown",
+        "note": null
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unverified.",
+        "atmosphere": "Hotel restaurant in central Windsor."
+      },
+      "recommendation": {
+        "score": 30,
+        "pick": false,
+        "rationale": "Strong lead in central Windsor — open the official page in your browser to confirm."
+      },
+      "sources": [
+        {
+          "url": "https://www.macdonaldhotels.co.uk/windsor/venue/christmas/christmas-day-lunch",
+          "title": "Christmas Day Lunch in Windsor — Macdonald Hotels (official; not readable during research)",
+          "supports": [
+            "Existence of a Christmas Day lunch page"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Not verified from the official page."]
+      "caveats": [
+        "Not verified from the official page."
+      ]
     },
     {
       "id": "lead-royal-windsor-pub",
@@ -787,20 +1329,88 @@
       "area": "windsor-eton",
       "locality": "Windsor",
       "address": "Windsor (see pub website)",
-      "links": { "website": "https://www.heritagepubs.co.uk/pubs/royal-windsor/", "christmas": "https://www.heritagepubs.co.uk/pubs/royal-windsor/occasion/christmas", "menu": "https://www.heritagepubs.co.uk/pubs/royal-windsor/menus", "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Windsor+pub+Windsor" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "\"Christmas 2026\" page uses generic Christmas Day wording and lists a Kids Xmas Day menu, but the adult menu, price and Christmas Day opening could not be confirmed." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Chain pub in Windsor." },
-      "recommendation": { "score": 20, "pick": false, "rationale": "Ask whether food is served on 25 December." },
-      "sources": [ { "url": "https://www.heritagepubs.co.uk/pubs/royal-windsor/occasion/christmas", "title": "Christmas 2026 — Royal Windsor (official)", "supports": ["Christmas 2026 page exists", "Kids Xmas Day menu listed"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.heritagepubs.co.uk/pubs/royal-windsor/",
+        "christmas": "https://www.heritagepubs.co.uk/pubs/royal-windsor/occasion/christmas",
+        "menu": "https://www.heritagepubs.co.uk/pubs/royal-windsor/menus",
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Royal+Windsor+pub+Windsor",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "\"Christmas 2026\" page uses generic Christmas Day wording and lists a Kids Xmas Day menu, but the adult menu, price and Christmas Day opening could not be confirmed."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Chain pub in Windsor."
+      },
+      "recommendation": {
+        "score": 20,
+        "pick": false,
+        "rationale": "Ask whether food is served on 25 December."
+      },
+      "sources": [
+        {
+          "url": "https://www.heritagepubs.co.uk/pubs/royal-windsor/occasion/christmas",
+          "title": "Christmas 2026 — Royal Windsor (official)",
+          "supports": [
+            "Christmas 2026 page exists",
+            "Kids Xmas Day menu listed"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Menu PDFs hosted on a third-party domain could not be opened."]
+      "caveats": [
+        "Menu PDFs hosted on a third-party domain could not be opened."
+      ]
     },
     {
       "id": "lead-vansittart-arms",
@@ -809,18 +1419,83 @@
       "area": "windsor-eton",
       "locality": "Windsor",
       "address": "Windsor (see pub website)",
-      "links": { "website": "https://www.vansittartarmswindsor.co.uk/", "christmas": "https://www.vansittartarmswindsor.co.uk/", "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Vansittart+Arms+Windsor" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Homepage invites Christmas bookings and links a \"Christmas Menu\" PDF, but whether food is served on 25 December was not established." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Traditional pub in Windsor." },
-      "recommendation": { "score": 20, "pick": false, "rationale": "Ask about 25 December." },
-      "sources": [ { "url": "https://www.vansittartarmswindsor.co.uk/", "title": "The Vansittart Arms (official)", "supports": ["Christmas booking and menu links"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.vansittartarmswindsor.co.uk/",
+        "christmas": "https://www.vansittartarmswindsor.co.uk/",
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Vansittart+Arms+Windsor",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Homepage invites Christmas bookings and links a \"Christmas Menu\" PDF, but whether food is served on 25 December was not established."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Traditional pub in Windsor."
+      },
+      "recommendation": {
+        "score": 20,
+        "pick": false,
+        "rationale": "Ask about 25 December."
+      },
+      "sources": [
+        {
+          "url": "https://www.vansittartarmswindsor.co.uk/",
+          "title": "The Vansittart Arms (official)",
+          "supports": [
+            "Christmas booking and menu links"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
       "caveats": []
     },
@@ -831,20 +1506,85 @@
       "area": "windsor-eton",
       "locality": "Old Windsor",
       "address": "Old Windsor (see pub website)",
-      "links": { "website": "https://www.thefoxandcastleoldwindsor.com/", "christmas": "https://www.thefoxandcastleoldwindsor.com/christmas/", "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Fox+and+Castle+Old+Windsor" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Search snippets mention a Christmas Day menu served from 12pm, pre-order only; the official page was not read." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Village pub in Old Windsor, south-east of Windsor town." },
-      "recommendation": { "score": 15, "pick": false, "rationale": "Check the official Christmas page." },
-      "sources": [ { "url": "https://www.thefoxandcastleoldwindsor.com/christmas/", "title": "Christmas — The Fox and Castle (official; not read)", "supports": [], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.thefoxandcastleoldwindsor.com/",
+        "christmas": "https://www.thefoxandcastleoldwindsor.com/christmas/",
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Fox+and+Castle+Old+Windsor",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Search snippets mention a Christmas Day menu served from 12pm, pre-order only; the official page was not read."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Village pub in Old Windsor, south-east of Windsor town."
+      },
+      "recommendation": {
+        "score": 15,
+        "pick": false,
+        "rationale": "Check the official Christmas page."
+      },
+      "sources": [
+        {
+          "url": "https://www.thefoxandcastleoldwindsor.com/christmas/",
+          "title": "Christmas — The Fox and Castle (official; not read)",
+          "supports": [],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Official page not read."]
+      "caveats": [
+        "Official page not read."
+      ]
     },
     {
       "id": "lead-watermans-arms-eton",
@@ -853,18 +1593,81 @@
       "area": "windsor-eton",
       "locality": "Eton",
       "address": "Eton (see pub website)",
-      "links": { "website": "https://www.watermans-eton.com/", "christmas": "https://www.watermans-eton.com/christmas/", "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Waterman%27s+Arms+Eton" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "The official page refused automated access. Snippets mention a festive menu from 27 November to 23 December only — nothing found for 25 December. No Eton venue was confirmed." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Historic Eton pub." },
-      "recommendation": { "score": 10, "pick": false, "rationale": "Only Eton lead found; Christmas Day food unlikely on current evidence." },
-      "sources": [ { "url": "https://www.watermans-eton.com/christmas/", "title": "Christmas — Waterman's Arms (official; not readable)", "supports": [], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.watermans-eton.com/",
+        "christmas": "https://www.watermans-eton.com/christmas/",
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Waterman%27s+Arms+Eton",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "The official page refused automated access. Snippets mention a festive menu from 27 November to 23 December only — nothing found for 25 December. No Eton venue was confirmed."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Historic Eton pub."
+      },
+      "recommendation": {
+        "score": 10,
+        "pick": false,
+        "rationale": "Only Eton lead found; Christmas Day food unlikely on current evidence."
+      },
+      "sources": [
+        {
+          "url": "https://www.watermans-eton.com/christmas/",
+          "title": "Christmas — Waterman's Arms (official; not readable)",
+          "supports": [],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
       "caveats": []
     },
@@ -875,18 +1678,85 @@
       "area": "maidenhead-bray-taplow",
       "locality": "Taplow",
       "address": "Cliveden House, Taplow (see hotel website)",
-      "links": { "website": "https://www.clivedenhouse.co.uk/", "christmas": "https://www.clivedenhouse.co.uk/christmas-and-new-year/", "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Cliveden+House+Taplow" },
-      "contact": { "phone": "+44 1628 668561", "email": "reservations@clivedenhouse.co.uk" },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Festive page lists a three-night Christmas House Party (marked SOLD OUT), festive afternoon tea and Dining Room festive cooking, but no Christmas Day meal for non-residents was found. FAQ: \"Can we come just for dining? Yes, subject to the restaurant or event's availability and booking requirements.\"" },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": "Christmas House Party (overnight package) shown as SOLD OUT; this is not a dining-only availability check." },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "unknown", "note": "General FAQ says dining-only visits are possible subject to availability; not specific to 25 December." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown for 25 December.", "atmosphere": "Grand stately-home hotel above the Thames." },
-      "recommendation": { "score": 15, "pick": false, "rationale": "Ask whether the Dining Room serves non-residents on Christmas Day." },
-      "sources": [ { "url": "https://www.clivedenhouse.co.uk/christmas-and-new-year/", "title": "Christmas & New Year — Cliveden House (official)", "supports": ["House Party sold out", "Dining-only FAQ", "Contact details"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.clivedenhouse.co.uk/",
+        "christmas": "https://www.clivedenhouse.co.uk/christmas-and-new-year/",
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Cliveden+House+Taplow",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": "+44 1628 668561",
+        "email": "reservations@clivedenhouse.co.uk"
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Festive page lists a three-night Christmas House Party (marked SOLD OUT), festive afternoon tea and Dining Room festive cooking, but no Christmas Day meal for non-residents was found. FAQ: \"Can we come just for dining? Yes, subject to the restaurant or event's availability and booking requirements.\""
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": "Christmas House Party (overnight package) shown as SOLD OUT; this is not a dining-only availability check."
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "unknown",
+        "note": "General FAQ says dining-only visits are possible subject to availability; not specific to 25 December."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown for 25 December.",
+        "atmosphere": "Grand stately-home hotel above the Thames."
+      },
+      "recommendation": {
+        "score": 15,
+        "pick": false,
+        "rationale": "Ask whether the Dining Room serves non-residents on Christmas Day."
+      },
+      "sources": [
+        {
+          "url": "https://www.clivedenhouse.co.uk/christmas-and-new-year/",
+          "title": "Christmas & New Year — Cliveden House (official)",
+          "supports": [
+            "House Party sold out",
+            "Dining-only FAQ",
+            "Contact details"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
       "caveats": []
     },
@@ -897,18 +1767,83 @@
       "area": "maidenhead-bray-taplow",
       "locality": "Bray",
       "address": "Bray (see pub website)",
-      "links": { "website": "https://www.thecrownatbray.com/", "christmas": "https://www.thecrownatbray.com/menus/", "menu": "https://www.thecrownatbray.com/menus/", "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=The+Crown+at+Bray" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Menus page shows a sample Christmas à la carte \"From Tuesday 1st December\"; nothing specific to 25 December found." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Christmas à la carte from 1 December (sample); 25 December unknown.", "atmosphere": "Village pub in Bray." },
-      "recommendation": { "score": 15, "pick": false, "rationale": "Ask whether open for food on 25 December." },
-      "sources": [ { "url": "https://www.thecrownatbray.com/menus/", "title": "Menus — The Crown at Bray (official)", "supports": ["Christmas menu sample from 1 Dec"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": "https://www.thecrownatbray.com/",
+        "christmas": "https://www.thecrownatbray.com/menus/",
+        "menu": "https://www.thecrownatbray.com/menus/",
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=The+Crown+at+Bray",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Menus page shows a sample Christmas à la carte \"From Tuesday 1st December\"; nothing specific to 25 December found."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Christmas à la carte from 1 December (sample); 25 December unknown.",
+        "atmosphere": "Village pub in Bray."
+      },
+      "recommendation": {
+        "score": 15,
+        "pick": false,
+        "rationale": "Ask whether open for food on 25 December."
+      },
+      "sources": [
+        {
+          "url": "https://www.thecrownatbray.com/menus/",
+          "title": "Menus — The Crown at Bray (official)",
+          "supports": [
+            "Christmas menu sample from 1 Dec"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
       "caveats": []
     },
@@ -919,20 +1854,85 @@
       "area": "maidenhead-bray-taplow",
       "locality": "Maidenhead (location per OpenTable listing — confirm)",
       "address": null,
-      "links": { "website": null, "christmas": null, "menu": null, "booking": null, "directions": null },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Third-party (OpenTable) snippets mention a Christmas Day set menu for 25 December 2026 with a deposit; the pub's own site failed a security-certificate check and was not read." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": "Third-party price not verified.", "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "welcome", "note": "Pub." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Pub." },
-      "recommendation": { "score": 10, "pick": false, "rationale": "Confirm location and details first." },
-      "sources": [ { "url": "https://www.opentable.co.uk/r/the-windsor-castle-maidenhead", "title": "The Windsor Castle, Maidenhead — OpenTable listing (third-party; not read directly)", "supports": [], "checked": "2026-11-17" } ],
+      "links": {
+        "website": null,
+        "christmas": null,
+        "menu": null,
+        "booking": null,
+        "directions": null,
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Third-party (OpenTable) snippets mention a Christmas Day set menu for 25 December 2026 with a deposit; the pub's own site failed a security-certificate check and was not read."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": "Third-party price not verified.",
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "welcome",
+        "note": "Pub."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Pub."
+      },
+      "recommendation": {
+        "score": 10,
+        "pick": false,
+        "rationale": "Confirm location and details first."
+      },
+      "sources": [
+        {
+          "url": "https://www.opentable.co.uk/r/the-windsor-castle-maidenhead",
+          "title": "The Windsor Castle, Maidenhead — OpenTable listing (third-party; not read directly)",
+          "supports": [],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Third-party information only."]
+      "caveats": [
+        "Third-party information only."
+      ]
     },
     {
       "id": "lead-hilton-london-paddington",
@@ -941,20 +1941,87 @@
       "area": "paddington",
       "locality": "Paddington station",
       "address": "Paddington, London W2 (see hotel website)",
-      "links": { "website": null, "christmas": null, "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Hilton+London+Paddington" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Only a third-party party-booking listing mentions festive set menus 1 Dec 2026 – 1 Jan 2027; nothing specific to Christmas Day. Official site not checked." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "unknown", "note": null },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown.", "atmosphere": "Station hotel attached to Paddington." },
-      "recommendation": { "score": 10, "pick": false, "rationale": "Ask the hotel about Christmas Day non-resident dining." },
-      "sources": [ { "url": "https://christmaspartiesunlimited.co.uk/party/2106/christmas-parties-2026-at-hilton-london-paddington-w2", "title": "Christmas Parties 2026 at Hilton London Paddington (third-party listing)", "supports": ["Festive set menus Dec 2026 (not Christmas Day specific)"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": null,
+        "christmas": null,
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Hilton+London+Paddington",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Only a third-party party-booking listing mentions festive set menus 1 Dec 2026 – 1 Jan 2027; nothing specific to Christmas Day. Official site not checked."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "unknown",
+        "note": null
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown.",
+        "atmosphere": "Station hotel attached to Paddington."
+      },
+      "recommendation": {
+        "score": 10,
+        "pick": false,
+        "rationale": "Ask the hotel about Christmas Day non-resident dining."
+      },
+      "sources": [
+        {
+          "url": "https://christmaspartiesunlimited.co.uk/party/2106/christmas-parties-2026-at-hilton-london-paddington-w2",
+          "title": "Christmas Parties 2026 at Hilton London Paddington (third-party listing)",
+          "supports": [
+            "Festive set menus Dec 2026 (not Christmas Day specific)"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["Third-party only."]
+      "caveats": [
+        "Third-party only."
+      ]
     },
     {
       "id": "lead-castle-hotel-windsor",
@@ -963,20 +2030,87 @@
       "area": "windsor-eton",
       "locality": "Central Windsor (High Street)",
       "address": "High Street, Windsor (see hotel website)",
-      "links": { "website": null, "christmas": null, "menu": null, "booking": null, "directions": "https://www.google.com/maps/search/?api=1&query=Castle+Hotel+Windsor" },
-      "contact": { "phone": null, "email": null },
-      "christmasDay": { "status": "unconfirmed", "evidence": "Ticketing listings for Christmas Day Lunch were found for 2024 and 2025 only; no 2026 listing found. Previous years are not treated as confirmation." },
-      "availability": { "status": "unknown", "partySize": null, "sitting": null, "checkedAt": null, "note": null },
-      "meals": { "lunch": null, "dinner": null, "sittings": [], "note": null },
-      "pricing": { "adult": null, "adultNote": null, "child": null, "childAgeBand": null, "childNote": null, "otherPrices": [], "includes": [], "supplements": null, "serviceCharge": { "status": "unknown", "rate": null, "note": null } },
-      "nonresident": { "status": "unknown", "note": "Past ticketed lunches suggest public sales, but not verified for 2026." },
-      "terms": { "deposit": null, "paymentDeadline": null, "preorder": null, "cancellation": null },
-      "dietary": null, "accessibility": null,
-      "summary": { "menu": "Unknown for 2026.", "atmosphere": "Hotel on Windsor High Street opposite the Castle." },
-      "recommendation": { "score": 25, "pick": false, "rationale": "Central location; previously ran Christmas Day lunch — worth asking about 2026." },
-      "sources": [ { "url": "https://castlehotelwindsor.yapsody.com/event/index/840417/Christmas-Day-Lunch-Castle-Hotel-2025", "title": "Christmas Day Lunch — Castle Hotel 2025 (ticketing; previous year)", "supports": ["Previous-year Christmas Day lunch only"], "checked": "2026-11-17" } ],
+      "links": {
+        "website": null,
+        "christmas": null,
+        "menu": null,
+        "booking": null,
+        "directions": "https://www.google.com/maps/search/?api=1&query=Castle+Hotel+Windsor",
+        "checkTables": null,
+        "bookingIsEnquiryForm": false
+      },
+      "contact": {
+        "phone": null,
+        "email": null
+      },
+      "christmasDay": {
+        "status": "unconfirmed",
+        "evidence": "Ticketing listings for Christmas Day Lunch were found for 2024 and 2025 only; no 2026 listing found. Previous years are not treated as confirmation."
+      },
+      "availability": {
+        "status": "unknown",
+        "partySize": null,
+        "sitting": null,
+        "checkedAt": null,
+        "note": null
+      },
+      "meals": {
+        "lunch": null,
+        "dinner": null,
+        "sittings": [],
+        "note": null
+      },
+      "pricing": {
+        "adult": null,
+        "adultNote": null,
+        "child": null,
+        "childAgeBand": null,
+        "childNote": null,
+        "otherPrices": [],
+        "includes": [],
+        "supplements": null,
+        "serviceCharge": {
+          "status": "unknown",
+          "rate": null,
+          "note": null
+        },
+        "childMaxAge": null
+      },
+      "nonresident": {
+        "status": "unknown",
+        "note": "Past ticketed lunches suggest public sales, but not verified for 2026."
+      },
+      "terms": {
+        "deposit": null,
+        "paymentDeadline": null,
+        "preorder": null,
+        "cancellation": null
+      },
+      "dietary": null,
+      "accessibility": null,
+      "summary": {
+        "menu": "Unknown for 2026.",
+        "atmosphere": "Hotel on Windsor High Street opposite the Castle."
+      },
+      "recommendation": {
+        "score": 25,
+        "pick": false,
+        "rationale": "Central location; previously ran Christmas Day lunch — worth asking about 2026."
+      },
+      "sources": [
+        {
+          "url": "https://castlehotelwindsor.yapsody.com/event/index/840417/Christmas-Day-Lunch-Castle-Hotel-2025",
+          "title": "Christmas Day Lunch — Castle Hotel 2025 (ticketing; previous year)",
+          "supports": [
+            "Previous-year Christmas Day lunch only"
+          ],
+          "checked": "2026-11-17"
+        }
+      ],
       "lastChecked": "2026-11-17",
-      "caveats": ["No 2026 evidence."]
+      "caveats": [
+        "No 2026 evidence."
+      ]
     }
   ]
 }

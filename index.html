@@ -33,6 +33,7 @@
         <a href="#overview">Overview</a>
         <a href="#venues">Venues</a>
         <a href="#compare">Compare</a>
+        <a href="#tables">Check tables</a>
         <a href="#budget">Budget</a>
         <a href="#travel">Travel</a>
         <a href="#enquiry">Enquiry</a>
@@ -192,6 +193,16 @@
         <div id="compare-view"></div>
       </section>
 
+      <!-- CHECK TABLES -->
+      <section id="tables" aria-labelledby="tables-h">
+        <h2 id="tables-h">Check tables for 25 December</h2>
+        <div class="panel">
+          <p class="small">Each button opens the venue's <strong>own booking system</strong> in a new tab. Where the system allows it, the date (and sometimes the time and party size) is filled in for you. You see live availability there yourself. <strong>Nothing is booked, sent or recorded</strong> by this page, and what you see is not saved back to the dashboard, so the "Availability" labels on the cards don't change.</p>
+          <p class="small muted">Set your party in the <a href="#budget">budget helper</a>. It is stored only in this browser.</p>
+          <div id="tables-view"></div>
+        </div>
+      </section>
+
       <!-- BUDGET -->
       <section id="budget" aria-labelledby="budget-h">
         <h2 id="budget-h">Budget helper</h2>
@@ -203,8 +214,9 @@
               <input id="p-adults" type="number" min="0" max="50" step="1" inputmode="numeric" placeholder="e.g. 2">
             </div>
             <div class="field">
-              <label for="p-children">Number of children</label>
-              <input id="p-children" type="number" min="0" max="50" step="1" inputmode="numeric" placeholder="0">
+              <label for="p-ages">Children's ages</label>
+              <input id="p-ages" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 14, 10" aria-describedby="p-ages-hint">
+              <p class="hint" id="p-ages-hint">Separate with commas. Ages are matched to each venue's child age band.</p>
             </div>
             <div class="field">
               <label for="p-scope">Show venues</label>

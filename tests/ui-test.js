@@ -137,23 +137,50 @@ function check(name, cond, extra) {
   check('favourites-only filter', (await cardIds('#results')).join() === 'carpenters-arms-windsor');
   await page.click('#f-clear');
 
-  // Budget
+  // Budget (party: 2 adults, children aged 14 and 10)
   await page.fill('#p-adults', '2');
-  await page.fill('#p-children', '1');
+  await page.fill('#p-ages', '14, 10');
   const bud = await page.textContent('#budget-view');
-  check('budget: SCW 2×£159 + £77.50 = £395.50', bud.includes('£395.50'));
-  check("budget: Carpenter's adults only (child price unknown) = £188.00", bud.includes('£188.00') && bud.includes('Known adult subtotal only'));
-  check('budget: unknown adult price gives no estimate', bud.includes('No estimate — adult price not published'));
+  check('budget: SCW 14yo above under-12 band -> adult price; 3x£159 + £77.50 = £554.50', bud.includes('£554.50') && bud.includes('Child aged 14: £159.00'));
+  check('budget: Royal Lancaster brunch 3x£325 + £125 = £1,100.00', bud.includes('£1,100.00'));
+  check('budget: Greene Oak 3x£110 + £55 = £385.00', bud.includes('£385.00'));
+  check("budget: Carpenter's adults only, excludes 2 of 4", bud.includes('£188.00') && bud.includes('Known subtotal — excludes 2 of 4 people'));
+  check("budget: Smith's child band unpublished -> children excluded, £198.00 + 12.5% = £24.75", bud.includes('£198.00') && bud.includes('£24.75') && bud.includes('age limit is not'));
+  check('budget: unknown prices give no estimate', bud.includes('No estimate — prices for your party are not published'));
   check('budget: never shows £0.00', !bud.includes('£0.00'));
-  check("budget: Smith's 2×99 + 30 = £228.00 with 12.5% ≈ £28.50 shown separately", bud.includes('£228.00') && bud.includes('£28.50'));
+  await page.fill('#p-ages', '14, ten');
+  check('budget: invalid age shows error', await page.isVisible('#party-error'));
+  await page.fill('#p-ages', '19');
+  check('budget: age 18+ rejected', (await page.textContent('#party-error')).includes('0 to 17'));
+  await page.fill('#p-ages', '14, 10');
   await page.fill('#p-adults', '-1');
-  check('budget: invalid input shows error', await page.isVisible('#party-error'));
+  check('budget: invalid adults shows error', await page.isVisible('#party-error'));
+  await page.fill('#p-adults', '2');
+  check('budget: error clears when fixed', !(await page.isVisible('#party-error')));
+
+  // Check tables
+  const ctHref = async (scope, id) => page.getAttribute(scope + ' a[data-check-tables="' + id + '"]', 'href');
+  const brunchHref = await ctHref('#tables-view', 'royal-lancaster-christmas-brunch');
+  check('check tables: OpenTable link pre-filled with 4 covers and 25 Dec', brunchHref.includes('covers=4') && brunchHref.includes('dateTime=2026-12-25T13:00:00'), brunchHref);
+  const brayHref = await ctHref('#tables-view', 'braywood-paley-street');
+  check('check tables: ResDiary link uses 25 Dec', brayHref.includes('date=2026-12-25'), brayHref);
+  const smithHref = await ctHref('#tables-view', 'smiths-bar-grill-paddington');
+  check('check tables: non-prefillable venue opens its booking page', smithHref === 'https://www.smithsbarandgrill.co.uk/visit', smithHref);
+  const scwText = await page.textContent('#tables-view a[data-check-tables="sir-christopher-wren-windsor"]');
+  check('check tables: enquiry-form venue labelled as enquiry, not table check', scwText.includes('Enquiry form') && !scwText.includes('Check tables'), scwText);
+  check('check tables: email-only venue offers contact instead', (await page.textContent('#tables-view')).includes('info@thegreeneoak.co.uk'));
+  check('check tables: card button present and pre-filled', (await ctHref('#card-royal-lancaster-christmas-brunch', 'royal-lancaster-christmas-brunch')).includes('covers=4'));
+  const allNewTab = await page.$$eval('a[data-check-tables]', (as) => as.every((x) => x.target === '_blank' && x.rel.indexOf('noopener') >= 0));
+  check('check tables: links open in new tab with noopener', allNewTab);
+  check('check tables: unconfirmed leads get no check button', (await page.$$('#cards-unconfirmed a[data-check-tables]')).length === 0);
+  await page.fill('#p-adults', '3');
+  check('check tables: party change updates covers on list and card', (await ctHref('#tables-view', 'royal-lancaster-christmas-brunch')).includes('covers=5') && (await ctHref('#card-royal-lancaster-christmas-brunch', 'royal-lancaster-christmas-brunch')).includes('covers=5'));
   await page.fill('#p-adults', '2');
 
   // Enquiry
   await page.selectOption('#e-venue', 'sir-christopher-wren-windsor');
   const enq = await page.inputValue('#e-text');
-  check('enquiry includes venue and party', enq.includes('Sir Christopher Wren') && enq.includes('2 adults and 1 child'), enq);
+  check('enquiry includes venue and party', enq.includes('Sir Christopher Wren') && enq.includes('2 adults and 2 children (aged 14 and 10)'), enq);
   check('enquiry includes required wording', enq.includes('nonresident guests for Christmas Day lunch or dinner on December 25, 2026'));
 
   // Export / import
@@ -168,12 +195,13 @@ function check(name, cond, extra) {
   await page.setInputFiles('#s-import', bad2); await page.waitForTimeout(300);
   check('import rejects wrong format', (await page.textContent('#s-status')).includes('does not look like a shortlist'));
   const good = path.join(tmp, 'good.json');
-  fs.writeFileSync(good, JSON.stringify({ format: 'xmas2026-shortlist', version: 1, favorites: ['smiths-bar-grill-paddington', 'ghost-venue', 'BAD ID!'], notes: { 'smiths-bar-grill-paddington': '<img src=x onerror=alert(1)>' }, party: { adults: 3, children: 0 } }));
+  fs.writeFileSync(good, JSON.stringify({ format: 'xmas2026-shortlist', version: 1, favorites: ['smiths-bar-grill-paddington', 'ghost-venue', 'BAD ID!'], notes: { 'smiths-bar-grill-paddington': '<img src=x onerror=alert(1)>' }, party: { adults: 3, childAges: [12, 'x'] } }));
   await page.setInputFiles('#s-import', good); await page.waitForTimeout(300);
   const st = await page.textContent('#s-status');
   check('valid import succeeds with warnings', st.includes('Imported') && st.includes('not in the current data') && st.includes('ignored'), st);
   check('imported HTML in note is not injected', (await page.$$('#shortlist-view img')).length === 0);
-  check('import restores party inputs', (await page.inputValue('#p-adults')) === '3');
+  check('import restores party inputs', (await page.inputValue('#p-adults')) === '3' && (await page.inputValue('#p-ages')) === '12');
+  check('import warns about invalid ages', st.includes('child ages'), st);
 
   // Printable shortlist content
   await page.evaluate(() => { window.print = () => {}; });

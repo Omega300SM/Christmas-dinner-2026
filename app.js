@@ -95,7 +95,7 @@
       return true;
     } catch (e) { return false; }
   }
-  function defaultState() { return { favorites: [], notes: {}, compare: [], party: { adults: null, children: null } }; }
+  function defaultState() { return { favorites: [], notes: {}, compare: [], party: { adults: null, childAges: [] } }; }
   function loadState() {
     storageOK = storageAvailable();
     if (!storageOK) { memoryStore = memoryStore || defaultState(); return memoryStore; }
@@ -138,7 +138,11 @@
     }
     if (obj.party && typeof obj.party === 'object') {
       if (isPosInt(obj.party.adults, 50)) s.party.adults = obj.party.adults;
-      if (isPosInt(obj.party.children, 50)) s.party.children = obj.party.children;
+      if (Array.isArray(obj.party.childAges)) {
+        var ages = obj.party.childAges.filter(function (a) { return isPosInt(a, 17); }).slice(0, 20);
+        if (ages.length !== obj.party.childAges.length) warnings.push('Some child ages were not whole numbers from 0 to 17 and were ignored.');
+        s.party.childAges = ages;
+      }
     }
     return { state: s, warnings: warnings };
   }
@@ -282,6 +286,7 @@
     renderCompare();
     renderBudget();
     renderTravel();
+    renderTables();
     renderEnquiry();
     renderShortlist();
   }
@@ -476,6 +481,7 @@
     var actions = h('div', { class: 'actions' },
       extLink(L.christmas, 'Christmas info'),
       L.menu && L.menu !== L.christmas ? extLink(L.menu, 'Menu') : null,
+      isConfirmed(v) ? checkTablesButton(v) : null,
       extLink(L.booking, 'Booking page'),
       extLink(L.directions, 'Directions'),
       c.phone ? h('a', { class: 'btn btn-secondary btn-small', href: 'tel:' + c.phone.replace(/[^0-9+]/g, ''), text: 'Call ' + c.phone }) : null,
@@ -548,7 +554,7 @@
 
   /* ---------- Favourites / notes / compare ---------- */
   function rerenderKeepingFocus(focusSelector) {
-    renderResults(); renderCompare(); renderBudget(); renderShortlist(); renderEnquiry(true);
+    renderResults(); renderCompare(); renderBudget(); renderShortlist(); renderEnquiry(); renderTables();
     if (focusSelector) { var el = document.querySelector(focusSelector); if (el) el.focus(); }
   }
   function toggleFavorite(id) {
@@ -621,21 +627,59 @@
   }
 
   /* ---------- Party / budget ---------- */
+  function parseAges(text) {
+    var t = String(text || '').trim();
+    if (!t) return { ages: [] };
+    var parts = t.split(/[\s,;]+/).filter(Boolean);
+    var ages = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (!/^\d{1,2}$/.test(parts[i]) || Number(parts[i]) > 17) return { error: 'Children\'s ages must be whole numbers from 0 to 17, separated by commas (e.g. 14, 10). Enter anyone 18 or over as an adult.' };
+      ages.push(Number(parts[i]));
+    }
+    if (ages.length > 20) return { error: 'Enter at most 20 children.' };
+    return { ages: ages };
+  }
+  function partyTotal() {
+    var a = state.party.adults, n = state.party.childAges.length;
+    if (a === null && !n) return null;
+    return (a || 0) + n;
+  }
+  function agesText(ages) {
+    if (!ages.length) return '';
+    if (ages.length === 1) return 'aged ' + ages[0];
+    return 'aged ' + ages.slice(0, -1).join(', ') + ' and ' + ages[ages.length - 1];
+  }
+  function partySummary() {
+    var a = state.party.adults || 0, ages = state.party.childAges;
+    var s = a + (a === 1 ? ' adult' : ' adults');
+    if (ages.length) s += ' and ' + ages.length + (ages.length === 1 ? ' child (' : ' children (') + agesText(ages) + ')';
+    return s;
+  }
+  function onPartyChanged() {
+    renderBudget(); renderEnquiry(); renderTables();
+    // Update card buttons in place so open card sections and notes are not disturbed.
+    document.querySelectorAll('[data-check-tables]').forEach(function (el) {
+      var v = byId[el.getAttribute('data-check-tables')];
+      var nb = v ? checkTablesButton(v) : null;
+      if (nb) el.replaceWith(nb); else el.remove();
+    });
+  }
   function bindParty() {
-    var a = $('p-adults'), c = $('p-children');
+    var a = $('p-adults'), c = $('p-ages');
     if (state.party.adults !== null) a.value = state.party.adults;
-    if (state.party.children !== null) c.value = state.party.children;
+    c.value = state.party.childAges.join(', ');
     function onChange() {
       var err = [];
       var av = a.value.trim() === '' ? null : Number(a.value);
-      var cv = c.value.trim() === '' ? null : Number(c.value);
       if (av !== null && !isPosInt(av, 50)) { err.push('Adults must be a whole number from 0 to 50.'); av = null; }
-      if (cv !== null && !isPosInt(cv, 50)) { err.push('Children must be a whole number from 0 to 50.'); cv = null; }
+      var parsed = parseAges(c.value);
+      if (parsed.error) err.push(parsed.error);
       var pe = $('party-error');
       pe.textContent = err.join(' '); pe.hidden = !err.length;
-      state.party.adults = av; state.party.children = cv;
+      state.party.adults = av;
+      if (!parsed.error) state.party.childAges = parsed.ages;
       saveState();
-      renderBudget(); renderEnquiry(true);
+      onPartyChanged();
     }
     a.addEventListener('input', onChange); c.addEventListener('input', onChange);
     $('p-scope').addEventListener('change', renderBudget);
@@ -644,8 +688,8 @@
   function renderBudget() {
     var host = $('budget-view');
     clear(host);
-    var adults = state.party.adults, children = state.party.children || 0;
-    if (adults === null && !children) { append(host, h('p', { class: 'muted small', text: 'Enter at least the number of adults to see estimates.' })); return; }
+    var adults = state.party.adults || 0, ages = state.party.childAges;
+    if (!adults && !ages.length) { append(host, h('p', { class: 'muted small', text: 'Enter at least the number of adults to see estimates.' })); return; }
     var scope = $('p-scope').value;
     var list = venues.filter(isConfirmed);
     if (scope === 'favorites') list = list.filter(function (v) { return state.favorites.indexOf(v.id) >= 0; });
@@ -656,46 +700,115 @@
     });
     if (!list.length) { append(host, h('p', { class: 'empty', text: scope === 'favorites' ? 'No confirmed venues in your favourites yet.' : 'No confirmed venues.' })); return; }
     var wrap = h('div', { class: 'budget-list' });
-    list.forEach(function (v) { append(wrap, budgetItem(v, adults || 0, children)); });
-    append(host, h('p', { class: 'small', text: 'Party: ' + (adults || 0) + ' adult(s), ' + children + ' child(ren). Estimates use published per-person food prices only. Drinks are excluded unless the venue lists them as included.' }), wrap);
+    list.forEach(function (v) { append(wrap, budgetItem(v, adults, ages)); });
+    append(host, h('p', { class: 'small', text: 'Party: ' + partySummary() + '. Each child is matched against the venue\'s published child age band. Where a child is above the band, the adult price is assumed. Where the band or child price is not published, that child is left out of the figure. Drinks are excluded unless the venue lists them as included.' }), wrap);
   }
 
-  function budgetItem(v, adults, children) {
-    var p = v.pricing;
-    var lines = [], excluded = [];
-    var figure;
-    var adultKnown = p.adult !== null;
-    var childKnown = p.child !== null;
-    if (!adultKnown && adults > 0) {
-      figure = unknownText('No estimate — adult price not published');
-    } else {
-      var adultSub = adultKnown ? adults * p.adult : 0;
-      if (adults > 0) lines.push(adults + ' × ' + money(p.adult) + ' adult = ' + money(adultSub));
-      var complete = true;
-      var childSub = 0;
-      if (children > 0) {
-        if (childKnown) { childSub = children * p.child; lines.push(children + ' × ' + money(p.child) + ' child' + (p.childAgeBand ? ' (' + p.childAgeBand + ')' : ' (age band not published)') + ' = ' + money(childSub)); }
-        else { complete = false; excluded.push('Child price not published — children are not included in this figure.'); }
+  // Exposed for tests: returns { subtotal|null, priced, excludedPeople, lines[], excluded[] }
+  function computeBudget(v, adults, ages) {
+    var p = v.pricing, lines = [], excluded = [];
+    var adultKnown = p.adult !== null && p.adult !== undefined;
+    var childKnown = p.child !== null && p.child !== undefined;
+    var maxAge = (typeof p.childMaxAge === 'number') ? p.childMaxAge : null;
+    var band = p.childAgeBand ? ' (' + p.childAgeBand + ')' : '';
+    var sub = 0, priced = 0, missing = 0;
+    if (adults > 0) {
+      if (adultKnown) { sub += adults * p.adult; priced += adults; lines.push(adults + ' × ' + money(p.adult) + ' adult = ' + money(adults * p.adult)); }
+      else { missing += adults; excluded.push('Adult price not published — ' + adults + ' adult(s) not included.'); }
+    }
+    ages.forEach(function (age) {
+      if (maxAge !== null && age <= maxAge && childKnown) {
+        sub += p.child; priced++; lines.push('Child aged ' + age + ': ' + money(p.child) + ' child price' + band);
+      } else if (maxAge !== null && age > maxAge) {
+        if (adultKnown) { sub += p.adult; priced++; lines.push('Child aged ' + age + ': ' + money(p.adult) + ' — above the published child band' + band + ', so the adult price is assumed. Confirm with the venue.'); }
+        else { missing++; excluded.push('Child aged ' + age + ' is above the child band' + band + ' and the adult price is not published — not included.'); }
+      } else if (childKnown) {
+        missing++;
+        excluded.push('Child aged ' + age + ': a ' + money(p.child) + ' child price is published but its age limit is not' + (adultKnown ? ' (would be ' + money(p.adult) + ' if charged as an adult)' : '') + ' — not included. Ask the venue.');
+      } else {
+        missing++;
+        excluded.push('Child aged ' + age + ': child price not published — not included.');
       }
-      var label = complete && children > 0 ? 'Known meal subtotal (adults + children)' : (children > 0 ? 'Known adult subtotal only' : 'Known adult subtotal');
-      var sub = adultSub + childSub;
-      figure = h('span', null, h('span', { class: 'budget-figure', text: money(sub) }), ' — ' + label);
+    });
+    return { subtotal: priced ? sub : null, priced: priced, excludedPeople: missing, lines: lines, excluded: excluded };
+  }
+
+  function budgetItem(v, adults, ages) {
+    var p = v.pricing;
+    var r = computeBudget(v, adults, ages);
+    var lines = r.lines.slice(), excluded = r.excluded.slice();
+    var figure;
+    if (r.subtotal === null) {
+      figure = unknownText('No estimate — prices for your party are not published');
+    } else {
+      var label = r.excludedPeople === 0 ? 'Estimated meal subtotal for the whole party (published prices)' : 'Known subtotal — excludes ' + r.excludedPeople + ' of ' + (r.priced + r.excludedPeople) + ' people';
+      figure = h('span', null, h('span', { class: 'budget-figure', text: money(r.subtotal) }), ' — ' + label);
       var sc = p.serviceCharge;
       if (sc.status === 'extra' && typeof sc.rate === 'number') {
-        lines.push('Plus ' + sc.rate + '% service charge if applied: about ' + money(Math.round(sub * sc.rate) / 100) + ' on this subtotal (' + (sc.note || 'added to the bill') + ')');
+        lines.push('Plus ' + sc.rate + '% service charge if applied: about ' + money(Math.round(r.subtotal * sc.rate) / 100) + ' on this subtotal (' + (sc.note || 'added to the bill') + ')');
       } else if (sc.status === 'unknown') {
         excluded.push('Service charge unknown — not included.');
       }
     }
     if (p.otherPrices && p.otherPrices.length) p.otherPrices.forEach(function (o) { excluded.push('Not included: ' + o.label + (typeof o.amount === 'number' ? ' (' + money(o.amount) + ')' : '')); });
     if (p.supplements) excluded.push('Supplements: ' + p.supplements);
-    excluded.push('Drinks not included unless listed: ' + (p.includes && p.includes.length ? p.includes.join('; ') : 'inclusions not published') + '.');
+    excluded.push(p.includes && p.includes.length ? 'Price includes: ' + p.includes.join('; ') + '. Drinks are extra unless listed here.' : 'Inclusions not published. Assume drinks are extra.');
     if (v.terms && v.terms.deposit) lines.push('Deposit: ' + v.terms.deposit);
     return h('div', { class: 'budget-item' },
       h('h4', null, h('a', { href: '#card-' + v.id, text: v.name })),
       h('div', null, figure),
       h('ul', null, lines.map(function (l) { return h('li', { text: l }); }), excluded.map(function (l) { return h('li', { text: l }); })),
       h('p', { class: 'small muted', text: 'Estimate excludes unconfirmed charges. Reconfirm the total with the venue.' }));
+  }
+
+  /* ---------- Check tables (opens booking systems; never books) ---------- */
+  var TARGET_DATE = '2026-12-25';
+  function checkTablesLink(v) {
+    var L = v.links || {};
+    var ct = L.checkTables;
+    var total = partyTotal();
+    if (ct && ct.template) {
+      var needsCovers = ct.template.indexOf('{covers}') >= 0;
+      if (!needsCovers || total) {
+        var url = ct.template.split('{date}').join(TARGET_DATE).split('{covers}').join(String(total || ''));
+        return { url: url, prefilled: true, note: ct.note };
+      }
+      if (L.booking) return { url: L.booking, prefilled: false, note: 'Enter your party in the budget helper to pre-fill the party size. Until then this opens the normal booking page.' };
+    }
+    if (L.booking && L.bookingIsEnquiryForm) return { url: L.booking, prefilled: false, enquiry: true, note: 'This is the venue\'s enquiry form, not a live availability check. The venue replies to you. Only submit it if you want to make an enquiry. The enquiry helper below can draft the message.' };
+    if (L.booking) return { url: L.booking, prefilled: false, note: 'This booking page cannot be pre-filled. Choose Friday 25 December 2026' + (total ? ' and a party of ' + total : '') + ' yourself.' };
+    return null;
+  }
+  function checkTablesButton(v, cls) {
+    var link = checkTablesLink(v);
+    if (!link || !safeUrl(link.url)) return null;
+    return h('a', { href: link.url, class: cls || 'btn btn-small', target: '_blank', rel: 'noopener noreferrer', title: link.note, 'data-check-tables': v.id },
+      (link.enquiry ? 'Enquiry form' : 'Check tables') + (link.prefilled ? ' (25 Dec' + (partyTotal() && link.url.indexOf('covers=') >= 0 ? ', party of ' + partyTotal() : '') + ')' : ''),
+      h('span', { class: 'visually-hidden', text: ' — opens the venue\'s booking system in a new tab. Nothing is booked or sent.' }));
+  }
+  function renderTables() {
+    var host = $('tables-view');
+    if (!host) return;
+    clear(host);
+    var total = partyTotal();
+    append(host, h('p', { class: 'small' }, total
+      ? 'Party: ' + partySummary() + ' (' + total + ' people in total).'
+      : h('span', null, unknownText('Party not set.'), ' Enter it in the budget helper so booking links can be pre-filled.')));
+    var list = venues.filter(function (v) { return isConfirmed(v); }).sort(function (a, b) { return AREA_ORDER[a.area] - AREA_ORDER[b.area] || a.name.localeCompare(b.name); });
+    var ul = h('ul', { class: 'tables-list' });
+    list.forEach(function (v) {
+      var link = checkTablesLink(v);
+      var c = v.contact || {};
+      append(ul, h('li', null,
+        h('div', { class: 'tables-name' }, h('a', { href: '#card-' + v.id, text: v.name }), h('span', { class: 'small muted', text: ' · ' + LABELS.area[v.area] })),
+        link ? h('div', null, checkTablesButton(v), h('div', { class: 'small muted', text: link.note })) :
+          h('div', { class: 'small' }, unknownText('No online booking page.'), ' ',
+            c.email ? h('span', null, 'Email ', h('a', { href: 'mailto:' + c.email, text: c.email })) : null,
+            c.email && c.phone ? ' or call ' : (c.phone ? 'Call ' : ''),
+            c.phone ? h('a', { href: 'tel:' + c.phone.replace(/[^0-9+]/g, ''), text: c.phone }) : null,
+            ' — the enquiry helper below can draft the message.')));
+    });
+    append(host, ul);
   }
 
   /* ---------- Travel ---------- */
@@ -740,12 +853,8 @@
   function partyPhrase() {
     var typed = $('e-party').value.trim();
     if (typed) return typed;
-    var a = state.party.adults, c = state.party.children;
-    if (a === null && !c) return '[party details]';
-    var parts = [];
-    if (a !== null) parts.push(a + (a === 1 ? ' adult' : ' adults'));
-    if (c) parts.push(c + (c === 1 ? ' child' : ' children') + ' (ages: [please add])');
-    return parts.join(' and ');
+    if (partyTotal() === null) return '[party details]';
+    return partySummary();
   }
   function renderEnquiry() {
     var id = $('e-venue').value;
@@ -811,7 +920,7 @@
     var payload = {
       format: EXPORT_FORMAT, version: 1, exportedAt: new Date().toISOString(),
       favorites: state.favorites.slice(), notes: Object.assign({}, state.notes), compare: state.compare.slice(),
-      party: { adults: state.party.adults, children: state.party.children }
+      party: { adults: state.party.adults, childAges: state.party.childAges.slice() }
     };
     try {
       var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
@@ -840,7 +949,7 @@
       state = result.state;
       saveState();
       $('p-adults').value = state.party.adults !== null ? state.party.adults : '';
-      $('p-children').value = state.party.children !== null ? state.party.children : '';
+      $('p-ages').value = state.party.childAges.join(', ');
       rerenderKeepingFocus();
       var msg = 'Imported ' + state.favorites.length + ' favourite(s) and ' + Object.keys(state.notes).length + ' note(s). This replaced the shortlist previously stored in this browser.';
       if (result.warnings.length) msg += ' Warnings: ' + result.warnings.join(' ');
@@ -895,7 +1004,7 @@
   }
 
   // Expose pure helpers for automated tests (no side effects).
-  window.__xmasPlanner = { parseImport: function (t) { return parseImport(t); }, sanitizeState: sanitizeState, validateVenue: validateVenue };
+  window.__xmasPlanner = { parseImport: function (t) { return parseImport(t); }, sanitizeState: sanitizeState, validateVenue: validateVenue, computeBudget: computeBudget, parseAges: parseAges };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

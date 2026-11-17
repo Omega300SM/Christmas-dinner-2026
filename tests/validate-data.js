@@ -45,7 +45,19 @@ for (const v of data.venues) {
     if (!Array.isArray(s.supports)) fail(`${n}: source.supports must be a list`);
   }
   if (v.christmasDay?.status === 'confirmed' && !(v.sources || []).some(s => s.supports && s.supports.length)) fail(`${n}: confirmed venue needs a source that supports facts`);
-  for (const [k, u] of Object.entries(v.links || {})) if (u !== null && !/^https:\/\//.test(u)) fail(`${n}: links.${k} not https or null`);
+  for (const [k, u] of Object.entries(v.links || {})) {
+    if (k === 'bookingIsEnquiryForm') { if (typeof u !== 'boolean') fail(`${n}: links.bookingIsEnquiryForm must be true/false`); continue; }
+    if (k === 'checkTables') {
+      if (u === null) continue;
+      if (!u || !/^https:\/\//.test(u.template || '')) fail(`${n}: links.checkTables.template must be https`);
+      if (/\{(?!date\}|covers\})[^}]*\}/.test(u.template || '')) fail(`${n}: links.checkTables.template has an unknown {placeholder}`);
+      if (!Array.isArray(u.prefills) || typeof u.note !== 'string') fail(`${n}: links.checkTables needs prefills[] and note`);
+      continue;
+    }
+    if (u !== null && !/^https:\/\//.test(u)) fail(`${n}: links.${k} not https or null`);
+  }
+  const cma = v.pricing?.childMaxAge;
+  if (!(cma === null || cma === undefined || (Number.isInteger(cma) && cma >= 0 && cma <= 17))) fail(`${n}: pricing.childMaxAge must be an integer 0-17 or null`);
 }
 const conf = data.venues.filter(v => v.christmasDay.status === 'confirmed').length;
 console.log(`${data.venues.length} venues (${conf} confirmed, ${data.venues.length - conf} leads), ${ids.size} unique ids`);

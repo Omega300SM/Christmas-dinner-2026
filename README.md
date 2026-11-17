@@ -63,6 +63,9 @@ Rules that keep the dashboard honest:
 | `christmasDay.status` | `"confirmed"` only when an official page or dated 2026 menu says food is served on 25 Dec 2026. Otherwise `"unconfirmed"`, which puts the venue in the "Worth contacting" section. |
 | `availability.status` | `"verified"` **only** with `partySize`, `sitting` and `checkedAt` filled in. Use `"booking-route-open"` when there's just a booking page or phone number, plus `"sold-out"` or `"unknown"`. |
 | `pricing.adult`, `pricing.child` | Numbers in pounds (e.g. `94` or `77.5`), or `null` if not published. **Never use `0` for unknown.** |
+| `pricing.childMaxAge` | Oldest age that gets the child price, as a whole number ("under 12" → `11`, "12 and under" → `12`), or `null` if the venue doesn't publish an age limit. The budget helper uses it to price each child by age. |
+| `links.checkTables` | Optional pre-filled booking-system link for the **Check tables** button: `{ "template": "https://…{date}…{covers}…", "prefills": ["date","covers"], "note": "…" }`. `{date}` becomes `2026-12-25` and `{covers}` becomes your party size. Only add parameters the venue's own booking link is known to use. Use `null` to fall back to `links.booking`. |
+| `links.bookingIsEnquiryForm` | `true` when `links.booking` is an enquiry form rather than a live booking system, so the button says "Enquiry form" instead of "Check tables". |
 | `pricing.serviceCharge.status` | `"included"`, `"extra"` (with `rate`, e.g. `12.5`) or `"unknown"`. |
 | `meals.lunch` / `meals.dinner` | `true`, `false`, or `null` (unknown). The "evening service" count uses `dinner: true`. |
 | `nonresident.status` | `"welcome"`, `"restricted"` or `"unknown"`. |
@@ -75,6 +78,30 @@ Rules that keep the dashboard honest:
 Each venue needs a unique lowercase `id` (letters, numbers, hyphens). Don't change an `id` once you have notes saved against it. If a record is missing required fields, the page skips it and shows a warning, so the rest of the page still works.
 
 Optional check (needs [Node.js](https://nodejs.org)): `node tests/validate-data.js`
+
+### Weekly automatic re-research
+
+A scheduled Claude Code task re-researches the venues **every Wednesday at about 10am US Central time** (it runs at 9:57am CT) until Christmas. Each run:
+
+- re-reads every venue's official Christmas page and menu, plus the official National Rail and TfL Christmas travel notices;
+- updates prices, sitting times, terms, confirmed/unconfirmed status, sold-out notices and every "last checked" date in `data/venues.json`;
+- moves a "worth contacting" lead into the confirmed section only when an official 2026 source confirms 25 December food service;
+- keeps the existing data, and says so in the run summary, if a site can't be read;
+- never books, submits forms or sends enquiries;
+- leaves table availability as "not checked", because live tables are only shown on the venues' booking systems (use **Check tables**);
+- validates the data, runs the tests and pushes the update to branch `claude/dazzling-shannon-9a8eng`.
+
+For the weekly updates to reach the live site, set **Settings → Pages → Branch** to `claude/dazzling-shannon-9a8eng` (folder `/ (root)`), or merge that branch into the branch Pages publishes. After GitHub Pages redeploys, click **↻ Refresh analysis** on the page.
+
+## Check tables for 25 December
+
+The **Check tables** section, plus a button on each confirmed venue card, opens each venue's own booking system in a new tab:
+
+- **Pre-filled:** Royal Lancaster brunch and afternoon tea (OpenTable: date, time and party size), and The Braywood (ResDiary: date).
+- **Booking page, not pre-filled:** pick Friday 25 December and your party size yourself.
+- **Enquiry form or email/phone only:** labelled as such. The enquiry helper drafts the message.
+
+You see live availability on the venue's site. **This page never books, submits or records anything**, so the "Availability" labels on the cards don't change after you check.
 
 ## 6. Preview locally
 
@@ -96,8 +123,9 @@ Optional browser tests (need Node.js and Playwright): start the server one level
 ## 7. Export and import your shortlist
 
 - **Save** (☆) on a card adds it to favourites. **My notes** on each card holds a private note.
+- Your party (number of adults and the children's ages, e.g. `14, 10`) is entered in the **budget helper**. It is stored only in your browser and is used to pre-fill booking links, price each child against the venue's age band, and complete the enquiry text. It is not in the repository.
 - In **My shortlist & notes**:
-  - **Export shortlist & notes (JSON)** downloads `christmas-2026-shortlist.json` with your favourites, notes, comparison picks and party size.
+  - **Export shortlist & notes (JSON)** downloads `christmas-2026-shortlist.json` with your favourites, notes, comparison picks and party (adults and children's ages).
   - **Import from JSON…** loads a previously exported file. It **replaces** what is stored in this browser. Files are checked first: invalid JSON, files from elsewhere, oversized files and malformed entries are rejected with a message. Notes for venues no longer in the data are kept and flagged.
   - **Print shortlist** prints your favourites and noted venues, with source and booking URLs written out in full.
 - Use export/import to move your shortlist to another device or browser, or to share it with the rest of your party.
