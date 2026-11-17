@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas Day 2026 Planner</title>
+  <meta name="description" content="A researched snapshot of Christmas Day 2026 dining options near Windsor, Maidenhead and Paddington, with a shortlist, comparison and budget helper.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <p class="eyebrow">Personal planning dashboard</p>
+      <h1>Christmas Day 2026 dining</h1>
+      <p class="lede">
+        We arrive in the UK on <strong>Tuesday 22 December 2026</strong> and expect to be in corporate temporary housing, probably in Windsor.
+        This page gathers places serving lunch or dinner on <strong><time datetime="2026-12-25">Friday 25 December 2026</time></strong>, so we don't have to cook three days after landing.
+      </p>
+      <p class="meta" id="research-meta">Loading research details…</p>
+    </div>
+    <nav class="site-nav" aria-label="Sections">
+      <div class="wrap nav-inner">
+        <a href="#overview">Overview</a>
+        <a href="#venues">Venues</a>
+        <a href="#compare">Compare</a>
+        <a href="#budget">Budget</a>
+        <a href="#travel">Travel</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="#shortlist">My shortlist</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="notice notice-warn" role="note">
+      <strong>Snapshot, not a booking service.</strong>
+      Prices, menus, sittings and availability may change and must be reconfirmed directly with each venue.
+      No table availability has been checked unless a card says so explicitly.
+    </div>
+
+    <div id="storage-warning" class="notice notice-error" hidden></div>
+
+    <div id="load-state" class="load-state" role="status" aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span> Loading venue research…
+    </div>
+    <div id="load-error" class="notice notice-error" role="alert" hidden></div>
+
+    <div id="app" hidden>
+      <!-- OVERVIEW -->
+      <section id="overview" aria-labelledby="overview-h">
+        <h2 id="overview-h">Overview</h2>
+        <div class="stats" id="stats"></div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>What the labels mean</h3>
+            <dl class="legend">
+              <dt><span class="badge badge-confirmed"><span aria-hidden="true">✓</span> Christmas Day 2026 confirmed</span></dt>
+              <dd>An official venue page or dated 2026 menu says food is served on 25 December 2026. Not proof that a table is free.</dd>
+              <dt><span class="badge badge-unconfirmed"><span aria-hidden="true">?</span> Worth contacting — 2026 not confirmed</span></dt>
+              <dd>A lead only: last year's listing, a third-party page, or an official page we couldn't read. Ask before planning.</dd>
+              <dt><span class="badge badge-avail-verified"><span aria-hidden="true">●</span> Availability verified</span></dt>
+              <dd>Only used where a specific party size, date and sitting was checked, with the time of the check recorded. <em>No venue currently has this.</em></dd>
+              <dt><span class="badge badge-avail-open"><span aria-hidden="true">→</span> Booking route open — tables not checked</span></dt>
+              <dd>The venue advertises a booking page, form, email or phone line. A working "Book" button does not mean tables are available.</dd>
+              <dt><span class="badge badge-avail-soldout"><span aria-hidden="true">✕</span> Sold out</span></dt>
+              <dd>The venue itself says the Christmas Day offer is sold out.</dd>
+              <dt><span class="badge badge-avail-unknown"><span aria-hidden="true">…</span> Availability unknown</span></dt>
+              <dd>No usable booking information found.</dd>
+            </dl>
+          </div>
+          <div class="panel">
+            <h3>Best fit for us <span class="tag">Editorial picks</span></h3>
+            <p class="small muted">These are our editorial recommendations based on the evidence below (location relative to Windsor, confirmed 2026 details, published child pricing, price range). They are not objective rankings.</p>
+            <ol class="picks" id="picks"></ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- VENUES -->
+      <section id="venues" aria-labelledby="venues-h">
+        <h2 id="venues-h">Venues</h2>
+
+        <form id="filters" class="filters panel" aria-label="Search and filter venues" novalidate>
+          <div class="filter-grid">
+            <div class="field field-wide">
+              <label for="f-q">Search</label>
+              <input id="f-q" type="search" placeholder="Name, location or menu (e.g. turkey, vegan, riverside)" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="f-area">Area</label>
+              <select id="f-area">
+                <option value="">All areas</option>
+                <option value="windsor-eton">Windsor &amp; Eton</option>
+                <option value="maidenhead-bray-taplow">Maidenhead, Bray &amp; Taplow</option>
+                <option value="paddington">Paddington (London)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-type">Venue type</label>
+              <select id="f-type">
+                <option value="">All types</option>
+                <option value="pub">Pub</option>
+                <option value="hotel-restaurant">Hotel restaurant</option>
+                <option value="restaurant">Restaurant</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-verify">Christmas Day status</label>
+              <select id="f-verify">
+                <option value="">All</option>
+                <option value="confirmed">2026 confirmed</option>
+                <option value="unconfirmed">Worth contacting (not confirmed)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-avail">Availability</label>
+              <select id="f-avail">
+                <option value="">All</option>
+                <option value="verified">Availability verified</option>
+                <option value="booking-route-open">Booking route open</option>
+                <option value="sold-out">Sold out</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-nonres">Non-resident dining</label>
+              <select id="f-nonres">
+                <option value="">All</option>
+                <option value="welcome">Confirmed welcome</option>
+                <option value="restricted">Restricted</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+            <fieldset class="field">
+              <legend>Meal</legend>
+              <label class="check"><input type="checkbox" id="f-meal-lunch" checked> Lunch / afternoon</label>
+              <label class="check"><input type="checkbox" id="f-meal-dinner" checked> Evening dinner</label>
+              <label class="check"><input type="checkbox" id="f-meal-unknown" checked> Times unknown</label>
+            </fieldset>
+            <fieldset class="field">
+              <legend>Adult price</legend>
+              <label for="f-maxprice">Maximum per adult (£)</label>
+              <input id="f-maxprice" type="number" inputmode="decimal" min="0" step="5" placeholder="Any">
+              <label class="check"><input type="checkbox" id="f-unknownprice" checked> Include unknown prices</label>
+            </fieldset>
+            <div class="field">
+              <label for="f-sort">Sort by</label>
+              <select id="f-sort">
+                <option value="fit">Recommended fit</option>
+                <option value="price">Adult price, low to high</option>
+                <option value="area">Area</option>
+                <option value="name">Venue name</option>
+              </select>
+              <label class="check"><input type="checkbox" id="f-fav"> Favourites only</label>
+            </div>
+          </div>
+          <div class="filter-actions">
+            <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+            <button type="button" id="f-clear" class="btn btn-secondary">Clear all filters</button>
+          </div>
+        </form>
+
+        <div id="results">
+          <section aria-labelledby="confirmed-h" class="result-group">
+            <h3 id="confirmed-h"><span aria-hidden="true">✓</span> Christmas Day 2026 dining confirmed <span class="count" id="confirmed-count"></span></h3>
+            <div class="cards" id="cards-confirmed"></div>
+          </section>
+          <section aria-labelledby="unconfirmed-h" class="result-group result-group-leads">
+            <h3 id="unconfirmed-h"><span aria-hidden="true">?</span> Worth contacting — 2026 not confirmed <span class="count" id="unconfirmed-count"></span></h3>
+            <p class="small muted">Leads only. Do not plan around these until the venue confirms 25 December 2026 food service.</p>
+            <div class="cards" id="cards-unconfirmed"></div>
+          </section>
+          <p id="no-results" class="empty" hidden>No venues match these filters. Try clearing some filters or including unknown prices.</p>
+        </div>
+      </section>
+
+      <!-- COMPARE -->
+      <section id="compare" aria-labelledby="compare-h">
+        <h2 id="compare-h">Compare <span class="count" id="compare-count"></span></h2>
+        <p class="small muted">Tick "Compare" on up to four venue cards.</p>
+        <div id="compare-view"></div>
+      </section>
+
+      <!-- BUDGET -->
+      <section id="budget" aria-labelledby="budget-h">
+        <h2 id="budget-h">Budget helper</h2>
+        <div class="panel">
+          <p class="small">Optional. Enter your party to estimate meal subtotals from <em>published</em> prices only. Drinks are never assumed to be included unless the venue says so. Your party details are saved only in this browser.</p>
+          <div class="party-inputs">
+            <div class="field">
+              <label for="p-adults">Number of adults</label>
+              <input id="p-adults" type="number" min="0" max="50" step="1" inputmode="numeric" placeholder="e.g. 2">
+            </div>
+            <div class="field">
+              <label for="p-children">Number of children</label>
+              <input id="p-children" type="number" min="0" max="50" step="1" inputmode="numeric" placeholder="0">
+            </div>
+            <div class="field">
+              <label for="p-scope">Show venues</label>
+              <select id="p-scope">
+                <option value="confirmed">All confirmed venues</option>
+                <option value="favorites">Favourites only</option>
+              </select>
+            </div>
+          </div>
+          <p id="party-error" class="field-error" role="alert" hidden></p>
+          <div id="budget-view" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- TRAVEL -->
+      <section id="travel" aria-labelledby="travel-h">
+        <h2 id="travel-h">Christmas Day travel &amp; logistics</h2>
+        <div class="panel panel-travel">
+          <p class="notice notice-warn small">Ordinary journey times do <strong>not</strong> apply on 25 December. This panel does not estimate taxi availability, holiday fares or journey times.</p>
+          <div id="travel-view"></div>
+        </div>
+      </section>
+
+      <!-- ENQUIRY -->
+      <section id="enquiry" aria-labelledby="enquiry-h">
+        <h2 id="enquiry-h">Enquiry helper</h2>
+        <div class="panel">
+          <p class="small">Builds a polite enquiry for you to paste into an email or contact form. It only copies text — nothing is sent.</p>
+          <div class="party-inputs">
+            <div class="field">
+              <label for="e-venue">Venue</label>
+              <select id="e-venue"></select>
+            </div>
+            <div class="field field-wide">
+              <label for="e-party">Party details</label>
+              <input id="e-party" type="text" maxlength="200" placeholder="Filled from the budget helper, or type e.g. 2 adults">
+              <p class="hint">Uses the adult/child numbers from the budget helper unless you type your own.</p>
+            </div>
+          </div>
+          <label for="e-text">Enquiry text</label>
+          <textarea id="e-text" rows="8" readonly></textarea>
+          <div class="row">
+            <button type="button" class="btn" id="e-copy">Copy enquiry text</button>
+            <span id="e-status" class="small" role="status" aria-live="polite"></span>
+          </div>
+          <div id="e-contact" class="small"></div>
+        </div>
+      </section>
+
+      <!-- SHORTLIST -->
+      <section id="shortlist" aria-labelledby="shortlist-h">
+        <h2 id="shortlist-h">My shortlist &amp; notes</h2>
+        <div class="panel">
+          <p class="small"><strong>Stored only in this browser.</strong> Favourites and personal notes are saved in this browser's local storage on this device. They do not sync to other devices or browsers, are not uploaded to GitHub, and are lost if you clear site data. Use Export to keep a copy.</p>
+          <div id="shortlist-view"></div>
+          <div class="row wrap-row">
+            <button type="button" class="btn" id="s-export">Export shortlist &amp; notes (JSON)</button>
+            <label class="btn btn-secondary file-btn" for="s-import">Import from JSON…</label>
+            <input type="file" id="s-import" accept="application/json,.json" class="visually-hidden">
+            <button type="button" class="btn btn-secondary" id="s-print">Print shortlist</button>
+          </div>
+          <p id="s-status" class="small" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section id="print-shortlist" class="print-only" aria-hidden="true"></section>
+
+  <footer class="site-footer">
+    <div class="wrap small">
+      <p>Researched snapshot for personal planning. Not affiliated with any venue. No analytics, tracking or cookies. Favourites and notes stay in your browser.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
