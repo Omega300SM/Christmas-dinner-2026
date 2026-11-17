@@ -64,6 +64,10 @@ a:hover { color: var(--cranberry); }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; color: var(--cranberry); margin: 0; font-weight: 600; }
 .lede { max-width: 70ch; color: var(--ink-2); margin: 0 0 .5rem; }
 .meta { font-size: .88rem; color: var(--muted); margin: 0; }
+.refresh-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; margin-top: .6rem; }
+.refresh-row .hint { max-width: 60ch; }
+#refresh-status:empty { display: none; }
+#refresh-status { margin-top: .35rem; font-weight: 600; color: var(--ink-2); }
 .site-nav { position: sticky; top: 0; z-index: 20; background: var(--evergreen); }
 .nav-inner { display: flex; gap: .25rem; overflow-x: auto; scrollbar-width: none; }
 .site-nav a { color: #fff; text-decoration: none; padding: .7rem .75rem; white-space: nowrap; font-size: .95rem; }
@@ -216,7 +220,7 @@ details .details-body ul { margin: .2rem 0; padding-left: 1.1rem; }
 @media print {
   :root { --bg: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --ink-2: #222; --muted: #444; --line: #999; }
   body { background: #fff; color: #000; font-size: 11pt; }
-  .site-nav, .skip-link, .filters, .card-tools, .actions, #compare, #budget .party-inputs, #enquiry, #shortlist .row, .site-footer, #load-state, .spinner, #s-import { display: none !important; }
+  .site-nav, .skip-link, .refresh-row, #refresh-status, .filters, .card-tools, .actions, #compare, #budget .party-inputs, #enquiry, #shortlist .row, .site-footer, #load-state, .spinner, #s-import { display: none !important; }
   .card, .panel, .stat { box-shadow: none; break-inside: avoid; }
   details { border: none; }
   details > summary { display: none; }

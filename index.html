@@ -20,6 +20,13 @@
         This page gathers places serving lunch or dinner on <strong><time datetime="2026-12-25">Friday 25 December 2026</time></strong>, so we don't have to cook three days after landing.
       </p>
       <p class="meta" id="research-meta">Loading research details…</p>
+      <div class="refresh-row">
+        <button type="button" id="refresh-btn" class="btn btn-secondary btn-small" aria-describedby="refresh-help" hidden>
+          <span aria-hidden="true">↻</span> Refresh analysis
+        </button>
+        <span id="refresh-help" class="hint">Reloads the latest published venue data and recalculates everything. Your filters, favourites and notes are kept. It does not search the web: venue research is updated by editing data/venues.json.</span>
+      </div>
+      <p id="refresh-status" class="meta" role="status" aria-live="polite"></p>
     </div>
     <nav class="site-nav" aria-label="Sections">
       <div class="wrap nav-inner">

@@ -70,6 +70,8 @@ Rules that keep the dashboard honest:
 | `area` | `"windsor-eton"`, `"maidenhead-bray-taplow"` or `"paddington"`. |
 | `recommendation.pick` / `score` | Editorial only. The three highest-scored confirmed venues with `pick: true` appear as "Best fit for us". |
 
+**Refresh analysis button:** after committing a data change, wait for GitHub Pages to redeploy (usually 1–2 minutes), then click **↻ Refresh analysis** at the top of the page. It downloads the latest `data/venues.json` and recalculates everything: counts, picks, filters, comparison, budget and enquiry list. Your filters, favourites, notes and party size are kept. A status line says whether anything changed and shows any new research snapshot date. If the download fails, the data already on screen is kept. The button does **not** search the web or check table availability, because the site is static. New research only appears when someone updates `data/venues.json`.
+
 Each venue needs a unique lowercase `id` (letters, numbers, hyphens). Don't change an `id` once you have notes saved against it. If a record is missing required fields, the page skips it and shows a warning, so the rest of the page still works.
 
 Optional check (needs [Node.js](https://nodejs.org)): `node tests/validate-data.js`

@@ -169,13 +169,55 @@
   var byId = {};
   var state = defaultState();
 
+  function fetchData() {
+    // Cache-busting query + no-store so a refresh always gets the latest published file.
+    return fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+  }
+
   function init() {
     state = loadState();
     if (!storageOK) showStorageWarning();
-    fetch(DATA_URL, { cache: 'no-cache' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    $('refresh-btn').addEventListener('click', refreshData);
+    fetchData()
       .then(function (json) { onData(json); })
       .catch(function (err) { showLoadError(err); });
+  }
+
+  /* Re-download data/venues.json and re-run every summary, filter and calculation.
+   * Keeps filters, favourites, notes, comparison picks and party size.
+   * It does NOT re-research the web: it reloads whatever data file is currently published. */
+  var refreshing = false;
+  function refreshData() {
+    if (refreshing) return;
+    refreshing = true;
+    var btn = $('refresh-btn'), status = $('refresh-status');
+    btn.disabled = true; btn.setAttribute('aria-busy', 'true');
+    status.textContent = 'Reloading venue data…';
+    var before = data ? JSON.stringify(data) : null;
+    var oldResearchedAt = data && data.meta ? data.meta.researchedAt : null;
+    fetchData()
+      .then(function (json) {
+        if (!json || !Array.isArray(json.venues)) throw new Error('data/venues.json has no "venues" list');
+        var changed = before !== JSON.stringify(json);
+        onData(json);
+        var now = fmtDateTime(new Date().toISOString());
+        var msg;
+        if (!changed) msg = 'Refreshed ' + now + '. No changes: the published data is the same as before.';
+        else {
+          msg = 'Refreshed ' + now + '. Updated data loaded: ' + venues.length + ' venues.';
+          if (json.meta && json.meta.researchedAt && json.meta.researchedAt !== oldResearchedAt) msg += ' New research snapshot: ' + (fmtDateTime(json.meta.researchedAt) || json.meta.researchedAt) + '.';
+          else msg += ' The research snapshot date did not change, so check each venue\'s "last checked" date.';
+        }
+        status.textContent = msg;
+      })
+      .catch(function (err) {
+        status.textContent = 'Refresh failed (' + (err && err.message ? err.message : 'unknown error') + '). The data already on screen has been kept.';
+      })
+      .then(function () {
+        refreshing = false;
+        btn.disabled = false; btn.removeAttribute('aria-busy');
+      });
   }
 
   function showLoadError(err) {
@@ -192,9 +234,11 @@
     el.hidden = false;
   }
 
+  var bound = false;
   function onData(json) {
     if (!json || !Array.isArray(json.venues)) { showLoadError(new Error('data/venues.json has no "venues" list')); return; }
     data = json;
+    venues = []; byId = {};
     var skipped = [];
     var seen = {};
     json.venues.forEach(function (v) {
@@ -204,8 +248,10 @@
       seen[v.id] = true;
       venues.push(v); byId[v.id] = v;
     });
+    var oldWarn = $('data-warning');
+    if (oldWarn) oldWarn.remove();
     if (skipped.length) {
-      var w = h('div', { class: 'notice notice-error', role: 'alert' },
+      var w = h('div', { id: 'data-warning', class: 'notice notice-error', role: 'alert' },
         h('strong', { text: skipped.length + ' venue record(s) in data/venues.json were skipped because they are incomplete: ' }),
         h('ul', null, skipped.map(function (s) { return h('li', { text: s }); })));
       $('main').insertBefore(w, $('app'));
@@ -213,25 +259,31 @@
     // drop compare ids not in data
     state.compare = state.compare.filter(function (id) { return byId[id]; });
     $('load-state').hidden = true;
+    $('load-error').hidden = true;
     $('app').hidden = false;
+    $('refresh-btn').hidden = false;
+    if (!bound) {
+      bound = true;
+      bindFilters();
+      bindParty();
+      bindEnquiry();
+      bindShortlist();
+      window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.dataset.wasOpen = d.open ? '1' : ''; d.open = true; }); });
+      window.addEventListener('afterprint', function () {
+        document.querySelectorAll('details').forEach(function (d) { d.open = d.dataset.wasOpen === '1'; });
+        document.body.classList.remove('printing-shortlist');
+      });
+    }
+    populateEnquiryVenues();
     renderMeta();
     renderStats();
     renderPicks();
-    bindFilters();
-    bindParty();
-    bindEnquiry();
-    bindShortlist();
     renderResults();
     renderCompare();
     renderBudget();
     renderTravel();
     renderEnquiry();
     renderShortlist();
-    window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.dataset.wasOpen = d.open ? '1' : ''; d.open = true; }); });
-    window.addEventListener('afterprint', function () {
-      document.querySelectorAll('details').forEach(function (d) { d.open = d.dataset.wasOpen === '1'; });
-      document.body.classList.remove('printing-shortlist');
-    });
   }
 
   function renderMeta() {
@@ -667,14 +719,20 @@
   }
 
   /* ---------- Enquiry ---------- */
-  function bindEnquiry() {
+  function populateEnquiryVenues() {
     var sel = $('e-venue');
+    var keep = sel.value;
+    clear(sel);
     append(sel, h('option', { value: '', text: '— General (no venue selected) —' }));
     var grpC = h('optgroup', { label: 'Confirmed for 2026' }), grpU = h('optgroup', { label: 'Worth contacting' });
     venues.slice().sort(function (a, b) { return a.name.localeCompare(b.name); }).forEach(function (v) {
       append(isConfirmed(v) ? grpC : grpU, h('option', { value: v.id, text: v.name }));
     });
     append(sel, grpC, grpU);
+    sel.value = keep && byId[keep] ? keep : '';
+  }
+  function bindEnquiry() {
+    var sel = $('e-venue');
     sel.addEventListener('change', function () { renderEnquiry(); });
     $('e-party').addEventListener('input', function () { renderEnquiry(); });
     $('e-copy').addEventListener('click', copyEnquiry);

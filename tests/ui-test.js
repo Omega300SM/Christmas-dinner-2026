@@ -209,7 +209,7 @@ function check(name, cond, extra) {
   // Failed JSON load
   const f = await browser.newContext();
   const fp = await f.newPage();
-  await fp.route('**/data/venues.json', (r) => r.fulfill({ status: 404, body: 'missing' }));
+  await fp.route('**/data/venues.json*', (r) => r.fulfill({ status: 404, body: 'missing' }));
   await fp.goto(BASE);
   await fp.waitForSelector('#load-error:not([hidden])');
   check('error state shown when JSON fails to load', (await fp.textContent('#load-error')).includes('could not be loaded'));
@@ -223,6 +223,51 @@ function check(name, cond, extra) {
   check('storage warning shown when localStorage unavailable', await lp.isVisible('#storage-warning'));
   await lp.click('#card-carpenters-arms-windsor .fav-btn');
   check('favourites still work for the visit', (await lp.getAttribute('#card-carpenters-arms-windsor .fav-btn', 'aria-pressed')) === 'true');
+
+  // Refresh analysis button
+  const rc = await browser.newContext();
+  const rp = await rc.newPage();
+  const rErrors = [];
+  rp.on('pageerror', (e) => rErrors.push(e.message));
+  let mode = 'same';
+  await rp.route('**/data/venues.json*', async (r) => {
+    if (mode === 'fail') return r.fulfill({ status: 500, body: 'error' });
+    const copy = JSON.parse(JSON.stringify(DATA));
+    if (mode === 'changed') {
+      copy.meta.researchedAt = '2026-12-01T09:00:00Z';
+      copy.venues.find((v) => v.id === 'carpenters-arms-windsor').pricing.adult = 97;
+      copy.venues = copy.venues.filter((v) => v.id !== 'lead-crown-at-bray');
+    }
+    return r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(copy) });
+  });
+  await rp.goto(BASE);
+  await rp.waitForSelector('#app:not([hidden])');
+  check('refresh button visible after load', await rp.isVisible('#refresh-btn'));
+  await rp.click('#card-carpenters-arms-windsor .fav-btn');
+  await rp.selectOption('#f-area', 'windsor-eton');
+  await rp.selectOption('#e-venue', 'carpenters-arms-windsor');
+  await rp.click('#refresh-btn');
+  await rp.waitForFunction(() => document.getElementById('refresh-status').textContent.startsWith('Refreshed'));
+  check('refresh with unchanged data says no changes', (await rp.textContent('#refresh-status')).includes('No changes'));
+  mode = 'changed';
+  await rp.click('#refresh-btn');
+  await rp.waitForFunction(() => document.getElementById('refresh-status').textContent.includes('Updated data'));
+  const rs = await rp.textContent('#refresh-status');
+  check('refresh with changed data reports update and new snapshot', rs.includes(`${total - 1} venues`) && rs.includes('New research snapshot'), rs);
+  check('refresh re-renders new price', (await rp.textContent('#card-carpenters-arms-windsor')).includes('£97.00'));
+  check('refresh updates research timestamp', (await rp.textContent('#research-meta')).includes('1 December 2026'));
+  check('refresh keeps filters', (await rp.inputValue('#f-area')) === 'windsor-eton' && (await rp.textContent('#result-count')).includes(`of ${total - 1}`));
+  check('refresh keeps favourites', (await rp.getAttribute('#card-carpenters-arms-windsor .fav-btn', 'aria-pressed')) === 'true');
+  check('refresh keeps enquiry venue and does not duplicate options', (await rp.inputValue('#e-venue')) === 'carpenters-arms-windsor' && (await rp.$$eval('#e-venue option', (o) => o.length)) === total);
+  await rp.selectOption('#f-area', 'paddington');
+  const padIds = await rp.$$eval('#results article.card', (els) => els.map((e) => e.id.replace('card-', '')));
+  check('area filter after refresh shows Paddington only', padIds.length > 0 && padIds.every((id) => venue(id).area === 'paddington'), padIds);
+  mode = 'fail';
+  await rp.click('#refresh-btn');
+  await rp.waitForFunction(() => document.getElementById('refresh-status').textContent.includes('Refresh failed'));
+  check('failed refresh keeps existing data on screen', (await rp.$$('#results article.card')).length === padIds.length);
+  check('refresh button re-enabled after failure', !(await rp.isDisabled('#refresh-btn')));
+  check('no JS errors during refresh', rErrors.length === 0, rErrors);
 
   await browser.close();
   console.log(`\n${pass} passed, ${failN} failed`);
