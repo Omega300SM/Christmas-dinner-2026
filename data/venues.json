@@ -3,7 +3,7 @@
   "meta": {
     "title": "Christmas Day 2026 dining — Windsor, Maidenhead & Paddington",
     "targetDate": "2026-12-25",
-    "researchedAt": "2026-11-17T03:57:00Z",
+    "researchedAt": "2026-11-18T16:05:00Z",
     "researchNote": "Researched snapshot only. Facts were read from official venue web pages and official menus on the date shown. Prices, menus, sittings and availability can change. Reconfirm everything directly with the venue before booking. No table availability has been checked for any venue.",
     "currency": "GBP",
     "areas": {
@@ -13,7 +13,7 @@
     }
   },
   "travel": {
-    "lastChecked": "2026-11-17",
+    "lastChecked": "2026-11-18",
     "items": [
       {
         "id": "rail-closed-25-26",
@@ -23,7 +23,7 @@
         "source": {
           "url": "https://www.nationalrail.co.uk/engineering-works/major-engineering-work-london-paddington-20261226/",
           "title": "National Rail — Major engineering work London Paddington (26 Dec 2026 – 3 Jan 2027)",
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       },
       {
@@ -34,7 +34,7 @@
         "source": {
           "url": "https://www.nationalrail.co.uk/engineering-works/major-engineering-work-london-paddington-20261226/",
           "title": "National Rail — Major engineering work London Paddington (26 Dec 2026 – 3 Jan 2027)",
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       },
       {
@@ -45,7 +45,7 @@
         "source": {
           "url": "https://tfl.gov.uk/travel-information/christmas-and-new-year",
           "title": "TfL — Christmas and New Year travel (official page; not readable during research)",
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       },
       {
@@ -56,7 +56,7 @@
         "source": {
           "url": "https://www.smithsbarandgrill.co.uk/christmas-day",
           "title": "Smith's Bar & Grill — Christmas Day 2026",
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       }
     ],
@@ -163,10 +163,10 @@
             "Menu",
             "Contact details"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Child age band not stated.",
         "Transport on the day: no trains (official National Rail notice) — car/taxi only."
@@ -273,7 +273,7 @@
             "Inclusions",
             "OpenTable booking link"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://www.royallancaster.com/christmas/",
@@ -282,10 +282,10 @@
             "Address and phone",
             "Christmas Day brunch at Park Restaurant advertised"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "The linked menu PDF file is named \"2025\"; the 2026 page says the format follows previous years. Ask for the 2026 menu.",
         "Walking time from Paddington station not verified — use the directions link."
@@ -387,10 +387,10 @@
             "OpenTable link",
             "2026 festive menu PDF"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "The page does not explicitly say \"2026\" next to the Christmas Day price, but it links a festive menu uploaded in November 2026 and the season runs to 3 January.",
         "Serving times on 25 December not published."
@@ -487,10 +487,10 @@
             "£20pp non-refundable deposit",
             "Address and phone"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Sitting times and service charge not published.",
         "Non-resident booking not explicitly stated."
@@ -588,7 +588,7 @@
             "Links 2026 menu PDF",
             "Address (page data)"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://www.nicholsonspubs.co.uk/content/dam/nicholsons/pdf/christmas/nichs-christmas-day-menu-2026-pb3.pdf",
@@ -600,10 +600,10 @@
             "Coffee & mince pie included",
             "Dietary labels"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "The menu PDF is a chain template (price band \"pb3\") linked from this pub's page; confirm the price with the pub.",
         "No phone number captured from the official page."
@@ -692,7 +692,7 @@
             "Booking link",
             "Address (page data)"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://www.harvester.co.uk/restaurants/southeast/thewindsorladwindsor/christmasdeposits",
@@ -702,13 +702,14 @@
             "Full payment & pre-order by 1 Dec",
             "Cancellation terms"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Price not captured.",
-        "The deposit page says \"1st December\" without a year; it is the current Christmas policy page."
+        "The deposit page says \"1st December\" without a year; it is the current Christmas policy page.",
+        "Deadline (as of 2026-11-18): full payment and pre-order are due by 1 December — within the next 14 days."
       ]
     },
     {
@@ -801,7 +802,7 @@
             "Christmas Day hours 12pm–3pm, lunch prebooked only, walk-in drinks",
             "Address and contacts"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://thegreeneoak.co.uk/menus/tgo-xmas-day-menu-26.pdf",
@@ -811,13 +812,14 @@
             "Pre-orders by 2 Nov 2026",
             "Dietary labels"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Pre-order deadline (2 Nov 2026) passed before research date.",
-        "Rural location: not reachable on foot from central Windsor in practice; check the route."
+        "Rural location: not reachable on foot from central Windsor in practice; check the route.",
+        "Deadline passed: the 2026 menu required pre-orders by 2 November 2026."
       ]
     },
     {
@@ -903,10 +905,10 @@
             "Non-resident note for Boxing Day brunch",
             "Phone and email"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Located in Surrey, outside Windsor town — included for its Windsor Great Park location.",
         "Price and menu unknown."
@@ -1010,10 +1012,10 @@
             "12.5% discretionary service",
             "Address, phone, email"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Rural location southwest of Maidenhead."
       ]
@@ -1106,13 +1108,14 @@
             "Menus",
             "Address and phone (page data)"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Conflicting final-payment dates in the venue's terms.",
-        "Child price not shown."
+        "Child price not shown.",
+        "Deadline (as of 2026-11-18): the terms say payment in full by 1 December 2026 (within the next 14 days), although another clause gives 11 December. Assume 1 December unless the pub confirms otherwise."
       ]
     },
     {
@@ -1203,7 +1206,7 @@
             "Children's Christmas Day menu exists",
             "2026 menu PDF links"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://www.coppaclub.co.uk/terms-and-conditions",
@@ -1215,7 +1218,7 @@
             "12.5% service charge",
             "Book via website"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         },
         {
           "url": "https://www.coppaclub.co.uk/maidenhead",
@@ -1224,13 +1227,14 @@
             "Address",
             "Phone and email"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Group-wide Christmas pages note \"prices and availability may vary by location\"; the £100 price appears on the Maidenhead page.",
-        "Menu PDF could not be opened during research."
+        "Menu PDF could not be opened during research.",
+        "Deadline (as of 2026-11-18): full payment is due 14 days before the booking (11 December for a 25 December lunch) and the pre-order 7 days before (18 December)."
       ]
     },
     {
@@ -1314,12 +1318,13 @@
           "supports": [
             "Existence of a Christmas Day lunch page"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
-        "Not verified from the official page."
+        "Not verified from the official page.",
+        "Official page still unreadable on 2026-11-18 (site blocks automated access)."
       ]
     },
     {
@@ -1404,10 +1409,10 @@
             "Christmas 2026 page exists",
             "Kids Xmas Day menu listed"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": [
         "Menu PDFs hosted on a third-party domain could not be opened."
       ]
@@ -1493,10 +1498,10 @@
           "supports": [
             "Christmas booking and menu links"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": []
     },
     {
@@ -1665,11 +1670,13 @@
           "url": "https://www.watermans-eton.com/christmas/",
           "title": "Christmas — Waterman's Arms (official; not readable)",
           "supports": [],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
-      "caveats": []
+      "lastChecked": "2026-11-18",
+      "caveats": [
+        "Official page still unreadable on 2026-11-18 (site blocks automated access)."
+      ]
     },
     {
       "id": "lead-cliveden-house",
@@ -1754,10 +1761,10 @@
             "Dining-only FAQ",
             "Contact details"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": []
     },
     {
@@ -1841,10 +1848,10 @@
           "supports": [
             "Christmas menu sample from 1 Dec"
           ],
-          "checked": "2026-11-17"
+          "checked": "2026-11-18"
         }
       ],
-      "lastChecked": "2026-11-17",
+      "lastChecked": "2026-11-18",
       "caveats": []
     },
     {
