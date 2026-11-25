@@ -138,7 +138,7 @@ Optional browser tests (need Node.js and Playwright): start the server one level
 
 ---
 
-## Research summary (snapshot 17 Nov 2026)
+## Research summary (snapshot 25 Nov 2026; first researched 17 Nov)
 
 **Confirmed for Christmas Day 2026 (official sources):**
 
@@ -147,6 +147,8 @@ Optional browser tests (need Node.js and Playwright): start the server one level
 | Sir Christopher Wren Hotel | Windsor | £159 | £77.50 (under 12) | Lunch |
 | The Carpenter's Arms | Windsor | £94 | unknown | Times unknown |
 | The Windsor Lad (Harvester) | Windsor | unknown | unknown | Times unknown |
+| Royal Windsor (Heritage Pubs) | Windsor (Datchet Road) | unknown | unknown (kids' menu exists) | Times unknown — confirmed 25 Nov |
+| The Fox & Castle | Old Windsor | £85 | unknown | From 12pm, pre-order only — confirmed 25 Nov |
 | The Greene Oak | Oakley Green, Windsor | £110 | £55 (under 12) | Lunch 12–3pm (pre-order deadline 2 Nov has passed) |
 | Fairmont Windsor Park | Englefield Green (Windsor Great Park edge) | unknown | unknown | Lunch |
 | The Braywood | Paley Street, Maidenhead | £180 (veg £160) | unknown | Lunch only |
@@ -154,8 +156,8 @@ Optional browser tests (need Node.js and Playwright): start the server one level
 | Coppa Club Maidenhead | Maidenhead | £100 | unknown | Lunch |
 | Smith's Bar & Grill | Paddington | £99 | £30 | 12pm–9.30pm (lunch **and** dinner) |
 | Royal Lancaster — Christmas brunch | Lancaster Gate (near Paddington) | £325 | £125 (under 12) | 1.00pm / 2.30pm |
-| Royal Lancaster — festive afternoon tea | Lancaster Gate | £95 | unknown for 25 Dec | Afternoon |
+| Royal Lancaster — festive afternoon tea | Lancaster Gate | £95 | unknown for 25 Dec | Daily 1.00pm–8.00pm (festive season) |
 
 **Travel:** National Rail's official notice says no trains run on Christmas Day or Boxing Day 2026, Elizabeth line and GWR included. TfL's 2026 Christmas Day arrangements couldn't be read from an official source and are shown as awaiting confirmation.
 
-**Gaps:** no Eton venue was confirmed. Macdonald Windsor's official page couldn't be read (bot protection), so it is listed as a lead only. See the "Worth contacting" section in the dashboard for all leads.
+**Gaps:** no Eton venue was confirmed (the Waterman's Arms in Eton directs Christmas Day to its sister pub, the Fox & Castle). Macdonald Windsor's official page couldn't be read (bot protection), so it is listed as a lead only. See the "Worth contacting" section in the dashboard for all leads.
